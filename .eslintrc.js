@@ -17,7 +17,19 @@ module.exports = {
   },
   plugins: ["typescript-sort-keys", "sort-destructure-keys"],
   rules: {
+    "@typescript-eslint/explicit-function-return-type": 0,
     "import/no-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: [
+          "**/*.spec.ts",
+          "**/*.config.ts",
+          "**/*.spec.tsx",
+          "**/setupTests.ts",
+        ],
+      },
+    ],
     "import/order": [
       "error",
       {

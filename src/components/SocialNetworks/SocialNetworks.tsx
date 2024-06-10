@@ -7,11 +7,7 @@ interface SocialNetworksProps extends FCProps {
 }
 
 const SocialNetworks: React.FC<SocialNetworksProps> = () => {
-  return (
-    <div>
-      <div /> SocialNetworks
-    </div>
-  );
+  return <div>SocialNetworks</div>;
 };
 
 export default SocialNetworks;

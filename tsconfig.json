@@ -8,6 +8,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
+    "types": ["jest", "node", "@testing-library/jest-dom", "vitest/globals"],
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -22,6 +23,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "vitest.config.mts"
+  ],
   "exclude": ["node_modules"]
 }
