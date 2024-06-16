@@ -7,15 +7,33 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  plugins: [require("tailwindcss-animate")],
   theme: {
     extend: {
+      animation: {
+        "gradient-x": "gradient-x 200s linear infinite",
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+      },
+      dropShadow: {
+        hard: "5px 10px 2px rgb(0 0 0 / 0.8)",
+      },
+      keyframes: {
+        "gradient-x": {
+          "0%, 100%": {
+            "background-position": "left center",
+            "background-size": "200% 200%",
+          },
+          "50%": {
+            "background-position": "center center",
+            "background-size": "200% 200%",
+          },
+        },
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
 };
 export default config;

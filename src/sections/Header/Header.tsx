@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 import { SocialNetworks } from "@/components/SocialNetworks";
@@ -9,13 +10,40 @@ const Header: React.FC<FCProps> = ({ className = "" }) => {
       <div>
         <h1 className="text-5xl font-bold">Albert Nevado</h1>
         <h2 className="text-xl font-medium mt-2">Senior Frontend Engineer</h2>
-        <p className="mt-4">
-          Etiam maximus libero pharetra mi ultricies dignissim. Praesent sit
-          amet leo velit. Pellentesque condimentum orci mi, eget sodales erat
-          tincidunt a.
+        <p className="mt-4 w-4/5">
+          My objective is to create applications that are able to make users'
+          workflows to achieve a task easier.
         </p>
       </div>
-      <SocialNetworks networks={[]} />
+      <SocialNetworks
+        networks={[
+          {
+            link: "https://github.com/albertnev",
+            type: "github",
+          },
+          {
+            link: "https://www.linkedin.com/in/albertnevado/",
+            type: "linkedin",
+          },
+        ]}
+      />
+      <p className="text-sm">
+        Check out{" "}
+        <Link
+          className="underline underline-offset-4"
+          href="https://github.com/albertnev/portfolio"
+          target="_blank"
+        >
+          the code of this portfolio
+        </Link>{" "}
+        on my Github!
+      </p>
+      <a
+        className="text-xs"
+        href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/"
+      >
+        SVG Background made by SVGBackgrounds.com.
+      </a>
     </header>
   );
 };

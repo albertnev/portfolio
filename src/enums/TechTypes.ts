@@ -1,0 +1,27 @@
+export enum TechTypes {
+  Angular = "AngularJS",
+  CSharp = "C#",
+  Css = "CSS3",
+  Docker = "Docker",
+  DotNet = ".NET",
+  Git = "Git",
+  GraphQl = "GraphQL",
+  Html = "HTML5",
+  IndexedDb = "IndexedDB",
+  Jest = "Jest",
+  Js = "JavaScript",
+  Kubernetes = "Kubernetes",
+  MongoDb = "MongoDB",
+  MySql = "MySQL",
+  NextJs = "NextJS",
+  NodeJs = "NodeJS",
+  Php = "PHP",
+  React = "ReactJS",
+  Redux = "Redux",
+  Rtl = "RTL",
+  Tailwind = "Tailwind",
+  Ts = "TypeScript",
+  VisualBasic = "Visual Basic",
+}
+
+export type TechTypesKeys = keyof typeof TechTypes;
