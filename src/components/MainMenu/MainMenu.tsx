@@ -9,7 +9,7 @@ import { LuMenu } from "react-icons/lu";
 
 const menuEntries = [
   { id: "about", title: "About me" },
-  { id: "skillset", title: "Skillset" },
+  { id: "skill-set", title: "Skill set" },
   { id: "work-experience", title: "Work experience" },
   { id: "education", title: "Education" },
   { id: "hobbies", title: "Hobbies" },

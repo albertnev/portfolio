@@ -1,11 +1,11 @@
 import { SectionWrapper } from "@/components/SectionWrapper";
-import SkillItem from "@/components/SkillItem/SkillItem";
+import { SkillItem } from "@/components/SkillItem";
 import { skillsets } from "@/data";
 
 const Skillset = () => {
   return (
     <SectionWrapper id="skillset" title="Skillset">
-      <ul className="grid grid-cols-3 gap-x-5 gap-y-8 md:grid-cols-4  lg:gap-x-8 lg:gap-y-10">
+      <ul className="grid grid-cols-3 gap-x-5 gap-y-8 md:grid-cols-4 lg:gap-x-8 lg:gap-y-10">
         {skillsets
           .slice()
           .sort((a, b) => b.level - a.level)

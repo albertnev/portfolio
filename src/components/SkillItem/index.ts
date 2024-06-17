@@ -1,1 +1,1 @@
-export { default as SkillSet } from "./SkillItem";
+export { default as SkillItem } from "./SkillItem";
