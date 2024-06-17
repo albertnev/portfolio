@@ -29,6 +29,7 @@ module.exports = {
           "**/*.spec.tsx",
           "**/setupTests.ts",
         ],
+        packageDir: "./",
       },
     ],
     "import/order": [

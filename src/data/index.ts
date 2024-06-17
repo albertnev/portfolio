@@ -116,7 +116,7 @@ export const educationItems: EducationItemDto[] = [
     yearEnd: 2010,
     yearStart: 2007,
   },
-];
+] as const;
 
 export const skillsets: {
   level: number;
@@ -182,7 +182,7 @@ export const skillsets: {
     level: 2,
     skill: "MySql",
   },
-];
+] as const;
 
 export const hobbiesCollections = [
   {
@@ -291,4 +291,4 @@ export const hobbiesCollections = [
     series: "Sakura",
     title: "Kero",
   },
-];
+] as const;

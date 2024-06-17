@@ -12,5 +12,9 @@ export const sortByYear = (a: EntityWithYear, b: EntityWithYear) => {
     return -1;
   }
 
+  if (b.yearStart === a.yearStart) {
+    return b.yearEnd - a.yearEnd;
+  }
+
   return b.yearStart - a.yearStart;
 };

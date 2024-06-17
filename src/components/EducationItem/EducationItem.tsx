@@ -5,7 +5,7 @@ import { GlassBackground } from "../GlassBackground";
 import { type EducationItemDto } from "@/types/EducationItemDto";
 import { type FCProps } from "@/types/FCProps";
 
-interface EducationItemProps extends FCProps, EducationItemDto {}
+export interface EducationItemProps extends FCProps, EducationItemDto {}
 
 const EducationItem: React.FC<EducationItemProps> = ({
   className = "",

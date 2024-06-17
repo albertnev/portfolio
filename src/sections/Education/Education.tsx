@@ -7,13 +7,16 @@ const Education = () => {
   return (
     <SectionWrapper id="education" title="Education">
       <ol className="flex flex-col space-y-12">
-        {educationItems.sort(sortByYear).map((educationItem) => (
-          <li
-            key={`${educationItem.yearStart}-${educationItem.title}-${educationItem.school}`}
-          >
-            <EducationItem {...educationItem} />
-          </li>
-        ))}
+        {educationItems
+          .slice()
+          .sort(sortByYear)
+          .map((educationItem) => (
+            <li
+              key={`${educationItem.yearStart}-${educationItem.title}-${educationItem.school}`}
+            >
+              <EducationItem {...educationItem} />
+            </li>
+          ))}
       </ol>
     </SectionWrapper>
   );

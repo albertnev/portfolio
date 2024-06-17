@@ -19,6 +19,7 @@ const Icon = () => {
         style={{
           alignItems: "center",
           background: "#334155",
+          borderRadius: "6px",
           color: "white",
           display: "flex",
           fontSize: "22px",
@@ -33,6 +34,7 @@ const Icon = () => {
           style={{
             alignItems: "center",
             border: "1px solid white",
+            borderRadius: "4px",
             display: "flex",
             height: "100%",
             justifyContent: "center",

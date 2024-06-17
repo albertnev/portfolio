@@ -7,6 +7,7 @@ import { FaTimes } from "react-icons/fa";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 import { type FCProps } from "@/types/FCProps";
+import { handleAccessibleKeyPress } from "@/utils/handleAccessibleKeyPress";
 
 interface ImageGalleryProps extends FCProps {
   collections: {
@@ -61,14 +62,20 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
             return null;
           }
 
+          const setShownCollectionCurrent = () => {
+            setShownCollection(collection.images);
+          };
+
           return (
             <li key={`collection-${collection.title}`}>
-              <button
+              <div
                 className="group relative overflow-hidden aspect-square rounded-lg cursor-pointer"
-                type="button"
-                onClick={() => {
-                  setShownCollection(collection.images);
-                }}
+                role="button"
+                tabIndex={0}
+                onClick={setShownCollectionCurrent}
+                onKeyDown={(e) =>
+                  handleAccessibleKeyPress(e, setShownCollectionCurrent)
+                }
               >
                 <Image
                   alt={lastImage.description}
@@ -82,7 +89,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
                   <span className="font-bold">{collection.series}</span>
                   <span>{collection.title}</span>
                 </div>
-              </button>
+              </div>
             </li>
           );
         })}

@@ -2,7 +2,7 @@
 
 import { type FCProps } from "@/types/FCProps";
 
-interface ButtonProps extends FCProps {
+export interface ButtonProps extends FCProps {
   icon?: React.ComponentType<{
     className?: string;
   }>;
@@ -23,7 +23,9 @@ const Button: React.FC<ButtonProps> = ({
       type="button"
       onClick={onClick}
     >
-      {IconComponent ? <IconComponent className="mr-2" /> : null}
+      {IconComponent ? (
+        <IconComponent className="mr-2" data-testid="button-icon" />
+      ) : null}
       <span>{children}</span>
     </button>
   );

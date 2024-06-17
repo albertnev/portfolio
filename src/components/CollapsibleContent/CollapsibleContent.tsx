@@ -6,7 +6,7 @@ import { FaCaretDown, FaCaretRight } from "react-icons/fa6";
 
 import { type FCProps } from "@/types/FCProps";
 
-interface CollapsibleContentProps extends FCProps {
+export interface CollapsibleContentProps extends FCProps {
   shownByDefault?: boolean;
   title?: string;
 }
