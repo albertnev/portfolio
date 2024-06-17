@@ -5,10 +5,10 @@ const project = resolve(__dirname, "tsconfig.json");
 module.exports = {
   extends: [
     require.resolve("@vercel/style-guide/eslint/browser"),
+    require.resolve("@vercel/style-guide/eslint/node"),
     require.resolve("@vercel/style-guide/eslint/react"),
     require.resolve("@vercel/style-guide/eslint/next"),
     require.resolve("@vercel/style-guide/eslint/typescript"),
-    "next/core-web-vitals",
     "plugin:typescript-sort-keys/recommended",
     "prettier",
   ],

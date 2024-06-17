@@ -9,7 +9,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { type FCProps } from "@/types/FCProps";
 import { handleAccessibleKeyPress } from "@/utils/handleAccessibleKeyPress";
 
-interface ImageGalleryProps extends FCProps {
+export interface ImageGalleryProps extends FCProps {
   collections: {
     images: {
       description: string;
@@ -67,7 +67,10 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
           };
 
           return (
-            <li key={`collection-${collection.title}`}>
+            <li
+              key={`collection-${collection.title}`}
+              data-testid={`collection-${collection.title}`}
+            >
               <div
                 className="group relative overflow-hidden aspect-square rounded-lg cursor-pointer"
                 role="button"
@@ -101,9 +104,11 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
           className={clsx(
             "z-50 fixed h-screen w-screen top-0 left-0 bg-slate-900/80 backdrop-blur-sm",
           )}
+          data-testid="image-gallery-modal"
         >
           <FaTimes
             className="absolute top-10 right-10 text-2xl z-50 cursor-pointer text-white"
+            data-testid="image-gallery-modal-close"
             title="Close gallery"
             onClick={() => {
               setShownCollection(undefined);
@@ -135,6 +140,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
             {!!shownImg && (
               <button
                 className="group absolute text-2xl top-auto bottom-auto left-10 p-2 rounded-md  cursor-pointer flex items-center justify-center bg-cyan-700/50 backdrop-blur-sm md:left-20 lg:left-1/4"
+                data-testid="image-gallery-previous"
                 title="Previous image"
                 type="button"
                 onClick={() => {
@@ -147,6 +153,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
             {shownImg < shownCollection.length - 1 && (
               <button
                 className="group absolute text-2xl top-auto bottom-auto right-10 p-2 rounded-md cursor-pointer flex items-center justify-center bg-cyan-700/50 backdrop-blur-sm md:right-20 lg:right-1/4"
+                data-testid="image-gallery-next"
                 title="Next image"
                 type="button"
                 onClick={() => {
