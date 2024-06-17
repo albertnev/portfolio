@@ -7,17 +7,17 @@ import { AiOutlineClose } from "react-icons/ai";
 import { FaCaretRight } from "react-icons/fa6";
 import { LuMenu } from "react-icons/lu";
 
+const menuEntries = [
+  { id: "about", title: "About me" },
+  { id: "skillset", title: "Skillset" },
+  { id: "work-experience", title: "Work experience" },
+  { id: "education", title: "Education" },
+  { id: "hobbies", title: "Hobbies" },
+];
+
 const MainMenu = () => {
   const [activeSection, setActiveSection] = useState<string>();
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const menuEntries = [
-    { id: "about", title: "About me" },
-    { id: "skillset", title: "Skillset" },
-    { id: "work-experience", title: "Work experience" },
-    { id: "education", title: "Education" },
-    { id: "hobbies", title: "Hobbies" },
-  ];
 
   useEffect(() => {
     const sections = menuEntries.map((section) =>
@@ -44,7 +44,7 @@ const MainMenu = () => {
     }, observerOptions);
 
     // Which sections (or elements) to observe
-    sections?.forEach((section) => {
+    sections.forEach((section) => {
       section && observer.observe(section);
     });
 
@@ -95,14 +95,17 @@ const MainMenu = () => {
       <button
         className={clsx(
           "fixed z-40 top-4 left-3 !mt-0 flex items-center md:hidden p-4 rounded-md backdrop-blur-sm text-2xl",
-          { "bg-transparent": menuOpen, "bg-cyan-700/10": !menuOpen },
+          { "bg-cyan-700/10": !menuOpen, "bg-transparent": menuOpen },
         )}
-        onClick={() => setMenuOpen((current) => !current)}
+        type="button"
+        onClick={() => {
+          setMenuOpen((current) => !current);
+        }}
       >
         {menuOpen ? <AiOutlineClose /> : <LuMenu />}
         {!menuOpen && (
           <span className="text-xl ml-5">
-            {menuEntries.find((entry) => entry.id === activeSection)?.title ||
+            {menuEntries.find((entry) => entry.id === activeSection)?.title ??
               ""}
           </span>
         )}

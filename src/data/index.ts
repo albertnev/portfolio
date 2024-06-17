@@ -1,17 +1,17 @@
 import { type TechTypesKeys } from "@/enums/TechTypes";
-import { EducationItemDto } from "@/types/EducationItemDto";
+import { type EducationItemDto } from "@/types/EducationItemDto";
 import { type WorkExperienceItemDto } from "@/types/WorkExperienceItemDto";
 
 export const workExperienceItems: WorkExperienceItemDto[] = [
   {
     company: "Mimacom",
-    jobTitle: "Senior Frontend Engineer",
     description:
       "Development of a CV web assistant using React and Redux with persistent data, where I created a custom templating processor. Also created from scratch a banking intranet to manage their transactions and orders, using RTKQ for caching purposes.",
+    devops: "Automated unit-tests with CI in Gitlab.",
+    jobTitle: "Senior Frontend Engineer",
     milestones:
       "Could teach and guide people under my charge. Built scalable projects from scratch with an easy to adapt to changes philosophy.",
     projectManagement: "Multidisciplinary teams applying SCRUM framework.",
-    devops: "Automated unit-tests with CI in Gitlab.",
     techStack: [
       "Html",
       "Css",
@@ -40,10 +40,10 @@ export const workExperienceItems: WorkExperienceItemDto[] = [
     company: "Pasiona & Travelport",
     description:
       "Development and maintenance for a leading worldwide travel retail company, migrating some desktop functionalities and creating new features in their new cloud application, both in frontend with ReactJS and in backend microservices with NodeJS and GraphQL.",
+    devops: "TBD with feature flags and CI/CD in multiple environments.",
     jobTitle: "Frontend Developer",
     milestones:
       "Quick learning curve for an extremly complex project, becoming one of the references for the team in a short period of time.",
-    devops: "TBD with feature flags and CI/CD in multiple environments.",
     projectManagement:
       "International multidisciplinary teams applying SAFe framework. Periodic PI plannings with strict dependency management between features.",
     techStack: [
@@ -186,103 +186,109 @@ export const skillsets: {
 
 export const hobbiesCollections = [
   {
+    images: [
+      {
+        description: "Armored Titan - Print and assembly",
+        src: "/images/aot-1.png",
+      },
+      {
+        description: "Armored Titan - Painting process",
+        src: "/images/aot-2.png",
+      },
+      {
+        description: "Armored Titan - Final result",
+        src: "/images/aot-3.png",
+      },
+    ],
     series: "Attack on Titan",
     title: "Armored Titan",
-    images: [
-      {
-        src: "/images/aot-1.png",
-        description: "Armored Titan - Print and assembly",
-      },
-      {
-        src: "/images/aot-2.png",
-        description: "Armored Titan - Painting process",
-      },
-      { src: "/images/aot-3.png", description: "Armored Titan - Final result" },
-    ],
   },
   {
+    images: [
+      {
+        description: "Gengar Family - Print and assembly",
+        src: "/images/gengar-1.png",
+      },
+      {
+        description: "Gengar Family - Final result",
+        src: "/images/gengar-2.png",
+      },
+    ],
     series: "Pokémon",
     title: "Gengar Family",
-    images: [
-      {
-        src: "/images/gengar-1.png",
-        description: "Gengar Family - Print and assembly",
-      },
-      {
-        src: "/images/gengar-2.png",
-        description: "Gengar Family - Final result",
-      },
-    ],
   },
   {
+    images: [
+      {
+        description: "Majora's Mask - Print and assembly",
+        src: "/images/mask-1.png",
+      },
+      {
+        description: "Majora's Mask - Painting process",
+        src: "/images/mask-2.png",
+      },
+      {
+        description: "Majora's Mask - Final result",
+        src: "/images/mask-3.png",
+      },
+    ],
     series: "Legend of Zelda",
     title: "Majora's Mask",
-    images: [
-      {
-        src: "/images/mask-1.png",
-        description: "Majora's Mask - Print and assembly",
-      },
-      {
-        src: "/images/mask-2.png",
-        description: "Majora's Mask - Painting process",
-      },
-      {
-        src: "/images/mask-3.png",
-        description: "Majora's Mask - Final result",
-      },
-    ],
   },
   {
+    images: [
+      {
+        description: "Giga Bowser - Final result",
+        src: "/images/bowser-1.png",
+      },
+      {
+        description: "Giga Bowser - Drool detail",
+        src: "/images/bowser-2.png",
+      },
+    ],
     series: "DnD & Mario",
     title: "Giga Bowser",
-    images: [
-      {
-        src: "/images/bowser-1.png",
-        description: "Giga Bowser - Final result",
-      },
-      {
-        src: "/images/bowser-2.png",
-        description: "Giga Bowser - Drool detail",
-      },
-    ],
   },
   {
+    images: [
+      {
+        description: "Tai & Agumon - Print and assembly",
+        src: "/images/digimon-1.png",
+      },
+      {
+        description: "Tai & Agumon - Final result",
+        src: "/images/digimon-2.png",
+      },
+    ],
     series: "Digimon",
     title: "Tai & Agumon",
-    images: [
-      {
-        src: "/images/digimon-1.png",
-        description: "Tai & Agumon - Print and assembly",
-      },
-      {
-        src: "/images/digimon-2.png",
-        description: "Tai & Agumon - Final result",
-      },
-    ],
   },
   {
+    images: [
+      {
+        description: "Growlithe - Assembly and painting process",
+        src: "/images/growlithe-1.png",
+      },
+      {
+        description: "Growlithe - Final result",
+        src: "/images/growlithe-2.png",
+      },
+    ],
     series: "Pokémon",
     title: "Growlithe",
-    images: [
-      {
-        src: "/images/growlithe-1.png",
-        description: "Growlithe - Assembly and painting process",
-      },
-      {
-        src: "/images/growlithe-2.png",
-        description: "Growlithe - Final result",
-      },
-    ],
   },
   {
-    series: "Sakura",
-    title: "Kero",
     images: [
       {
-        src: "/images/kero-1.png",
         description: "Kero - Assembly and painting process",
+        src: "/images/kero-1.png",
       },
-      { src: "/images/kero-2.png", description: "Kero - Final result" },
+      {
+        description: "Kero - Final result",
+        src: "/images/kero-2.png",
+      },
     ],
+    series: "Sakura",
+    title: "Kero",
   },
 ];

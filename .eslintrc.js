@@ -15,7 +15,7 @@ module.exports = {
   parserOptions: {
     project,
   },
-  plugins: ["typescript-sort-keys", "sort-destructure-keys"],
+  plugins: ["jsx-a11y", "typescript-sort-keys", "sort-destructure-keys"],
   rules: {
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/restrict-template-expressions": "off",
@@ -42,7 +42,7 @@ module.exports = {
       },
     ],
     "no-console": "warn",
-    "no-implicit-coercion": ["error", { allow: "!!" }],
+    "no-implicit-coercion": ["error", { allow: ["!!"] }],
     "no-param-reassign": [
       "error",
       {

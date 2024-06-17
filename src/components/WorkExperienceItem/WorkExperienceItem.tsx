@@ -1,14 +1,14 @@
 import { clsx } from "clsx";
+import { FaNetworkWired } from "react-icons/fa6";
+import { GrDeploy } from "react-icons/gr";
+import { LuMilestone } from "react-icons/lu";
 
+import { CollapsibleContent } from "../CollapsibleContent";
+import { GlassBackground } from "../GlassBackground";
 import { TechPill } from "../TechPill";
 
 import { type FCProps } from "@/types/FCProps";
 import { type WorkExperienceItemDto } from "@/types/WorkExperienceItemDto";
-import { FaNetworkWired } from "react-icons/fa6";
-import { GrDeploy } from "react-icons/gr";
-import { LuMilestone } from "react-icons/lu";
-import { CollapsibleContent } from "../CollapsibleContent";
-import { GlassBackground } from "../GlassBackground";
 
 interface WorkExperienceItemProps extends FCProps, WorkExperienceItemDto {}
 
@@ -16,8 +16,8 @@ const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
   className = "",
   company,
   description,
-  jobTitle,
   devops,
+  jobTitle,
   milestones,
   projectManagement,
   techStack,
@@ -42,9 +42,9 @@ const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
           </span>
         </div>
         <div>
-          <h4 className="text-lg font-bold mb-1 group-hover:text-cyan-200">
+          <h3 className="text-lg font-bold mb-1 group-hover:text-cyan-200">
             {jobTitle}
-          </h4>
+          </h3>
           {!!description && <p>{description}</p>}
           {(!!milestones || !!devops || !!projectManagement) && (
             <CollapsibleContent className="my-4">

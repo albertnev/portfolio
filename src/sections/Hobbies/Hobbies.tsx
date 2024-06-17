@@ -4,7 +4,7 @@ import { hobbiesCollections } from "@/data";
 
 const Hobbies = () => {
   return (
-    <SectionWrapper id="hobbies" title="Hobbies" className="">
+    <SectionWrapper id="hobbies" title="Hobbies">
       <div className="flex flex-col space-y-5">
         <p>
           I have lots of hobbies that keep me entertained through the day. Some
@@ -27,7 +27,7 @@ const Hobbies = () => {
           :
         </p>
       </div>
-      <ImageGallery collections={hobbiesCollections} className="mt-5" />
+      <ImageGallery className="mt-5" collections={hobbiesCollections} />
     </SectionWrapper>
   );
 };

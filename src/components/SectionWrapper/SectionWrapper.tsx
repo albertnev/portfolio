@@ -16,8 +16,8 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
   id,
 }) => {
   const { inView, ref } = useInView({
-    triggerOnce: true,
     rootMargin: "-200px 0px -200px 0px",
+    triggerOnce: true,
   });
 
   return (

@@ -14,8 +14,8 @@ const SocialNetworks: React.FC<SocialNetworksProps> = ({
 }) => {
   const networkIcons = {
     github: FaGithub,
-    linkedin: FaLinkedin,
     instagram: FaInstagram,
+    linkedin: FaLinkedin,
   };
 
   return (
@@ -23,8 +23,12 @@ const SocialNetworks: React.FC<SocialNetworksProps> = ({
       {networks.map(({ link, type }) => {
         const Icon = networkIcons[type];
         return (
-          <li className="opacity-85 hover:opacity-100 text-4xl " key={type}>
-            <Link href={link} target="_blank">
+          <li key={type} className="opacity-85 hover:opacity-100 text-4xl ">
+            <Link
+              aria-label={`Visit Albert's ${type} page`}
+              href={link}
+              target="_blank"
+            >
               <Icon />
             </Link>
           </li>

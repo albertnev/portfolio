@@ -1,10 +1,11 @@
 import Link from "next/link";
 import React from "react";
 
+import { ContactButton } from "./components/ContactButton";
+
 import { MainMenu } from "@/components/MainMenu";
 import { SocialNetworks } from "@/components/SocialNetworks";
 import { type FCProps } from "@/types/FCProps";
-import { ContactButton } from "./components/ContactButton";
 
 const Header: React.FC<FCProps> = ({ className = "" }) => {
   return (
