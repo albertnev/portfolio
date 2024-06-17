@@ -1,3 +1,5 @@
+"use client";
+
 import { FCProps } from "@/types/FCProps";
 import { clsx } from "clsx";
 import { useState } from "react";

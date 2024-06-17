@@ -19,6 +19,7 @@ export enum TechTypes {
   React = "ReactJS",
   Redux = "Redux",
   Rtl = "RTL",
+  StyledComponents = "Styled C.",
   Tailwind = "Tailwind",
   Ts = "TypeScript",
   VisualBasic = "Visual Basic",

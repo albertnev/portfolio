@@ -1,3 +1,5 @@
+"use client";
+
 import { clsx } from "clsx";
 import { useInView } from "react-intersection-observer";
 
@@ -13,13 +15,16 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
   className = "",
   id,
 }) => {
-  const { inView, ref } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { inView, ref } = useInView({
+    triggerOnce: true,
+    rootMargin: "-200px 0px -200px 0px",
+  });
 
   return (
     <section
       ref={ref}
       className={clsx(
-        "lg:mt-24 transition-opacity delay-300 duration-1000 ease-in",
+        "lg:pt-24 transition-opacity delay-200 duration-1000 ease-in",
         {
           "opacity-0": !inView,
           "opacity-100": inView,

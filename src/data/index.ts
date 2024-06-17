@@ -1,4 +1,5 @@
 import { type TechTypesKeys } from "@/enums/TechTypes";
+import { EducationItemDto } from "@/types/EducationItemDto";
 import { type WorkExperienceItemDto } from "@/types/WorkExperienceItemDto";
 
 export const workExperienceItems: WorkExperienceItemDto[] = [
@@ -11,7 +12,17 @@ export const workExperienceItems: WorkExperienceItemDto[] = [
       "Could teach and guide people under my charge. Built scalable projects from scratch with an easy to adapt to changes philosophy.",
     projectManagement: "Multidisciplinary teams applying SCRUM framework.",
     devops: "Automated unit-tests with CI in Gitlab.",
-    techStack: ["Html", "Css", "Js", "React", "Redux", "Jest", "Rtl", "Docker"],
+    techStack: [
+      "Html",
+      "Css",
+      "Js",
+      "React",
+      "Redux",
+      "StyledComponents",
+      "Jest",
+      "Rtl",
+      "Docker",
+    ],
     yearStart: 2021,
   },
   {
@@ -86,21 +97,24 @@ export const workExperienceItems: WorkExperienceItemDto[] = [
   },
 ];
 
-export const languages: {
-  level: "Native" | "Advanced" | "Professional" | "Conversational";
-  name: string;
-}[] = [
+export const educationItems: EducationItemDto[] = [
   {
-    level: "Advanced",
-    name: "English",
+    school: "Universitat Oberta de Catalunya",
+    title: "Multimedia Engineering degree",
+    yearEnd: 2017,
+    yearStart: 2012,
   },
   {
-    level: "Native",
-    name: "Catalan",
+    school: "LaSalle Gràcia",
+    title: "Certificate of Higher Education (Software development)",
+    yearEnd: 2011,
+    yearStart: 2009,
   },
   {
-    level: "Native",
-    name: "Spanish",
+    school: "LaSalle Gràcia",
+    title: "General Certificate of Education",
+    yearEnd: 2010,
+    yearStart: 2007,
   },
 ];
 
@@ -138,6 +152,10 @@ export const skillsets: {
   },
   {
     level: 4,
+    skill: "StyledComponents",
+  },
+  {
+    level: 4,
     skill: "Git",
   },
   {
@@ -163,5 +181,108 @@ export const skillsets: {
   {
     level: 2,
     skill: "MySql",
+  },
+];
+
+export const hobbiesCollections = [
+  {
+    series: "Attack on Titan",
+    title: "Armored Titan",
+    images: [
+      {
+        src: "/images/aot-1.png",
+        description: "Armored Titan - Print and assembly",
+      },
+      {
+        src: "/images/aot-2.png",
+        description: "Armored Titan - Painting process",
+      },
+      { src: "/images/aot-3.png", description: "Armored Titan - Final result" },
+    ],
+  },
+  {
+    series: "Pokémon",
+    title: "Gengar Family",
+    images: [
+      {
+        src: "/images/gengar-1.png",
+        description: "Gengar Family - Print and assembly",
+      },
+      {
+        src: "/images/gengar-2.png",
+        description: "Gengar Family - Final result",
+      },
+    ],
+  },
+  {
+    series: "Legend of Zelda",
+    title: "Majora's Mask",
+    images: [
+      {
+        src: "/images/mask-1.png",
+        description: "Majora's Mask - Print and assembly",
+      },
+      {
+        src: "/images/mask-2.png",
+        description: "Majora's Mask - Painting process",
+      },
+      {
+        src: "/images/mask-3.png",
+        description: "Majora's Mask - Final result",
+      },
+    ],
+  },
+  {
+    series: "DnD & Mario",
+    title: "Giga Bowser",
+    images: [
+      {
+        src: "/images/bowser-1.png",
+        description: "Giga Bowser - Final result",
+      },
+      {
+        src: "/images/bowser-2.png",
+        description: "Giga Bowser - Drool detail",
+      },
+    ],
+  },
+  {
+    series: "Digimon",
+    title: "Tai & Agumon",
+    images: [
+      {
+        src: "/images/digimon-1.png",
+        description: "Tai & Agumon - Print and assembly",
+      },
+      {
+        src: "/images/digimon-2.png",
+        description: "Tai & Agumon - Final result",
+      },
+    ],
+  },
+  {
+    series: "Pokémon",
+    title: "Growlithe",
+    images: [
+      {
+        src: "/images/growlithe-1.png",
+        description: "Growlithe - Assembly and painting process",
+      },
+      {
+        src: "/images/growlithe-2.png",
+        description: "Growlithe - Final result",
+      },
+    ],
+  },
+  {
+    series: "Sakura",
+    title: "Kero",
+    images: [
+      {
+        src: "/images/kero-1.png",
+        description: "Kero - Assembly and painting process",
+      },
+      { src: "/images/kero-2.png", description: "Kero - Final result" },
+    ],
   },
 ];

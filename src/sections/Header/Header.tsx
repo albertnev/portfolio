@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
+import { MainMenu } from "@/components/MainMenu";
 import { SocialNetworks } from "@/components/SocialNetworks";
 import { type FCProps } from "@/types/FCProps";
 
@@ -15,6 +16,7 @@ const Header: React.FC<FCProps> = ({ className = "" }) => {
           workflows to achieve a task easier.
         </p>
       </div>
+      <MainMenu />
       <SocialNetworks
         networks={[
           {
@@ -27,23 +29,25 @@ const Header: React.FC<FCProps> = ({ className = "" }) => {
           },
         ]}
       />
-      <p className="text-sm">
-        Check out{" "}
-        <Link
-          className="underline underline-offset-4"
-          href="https://github.com/albertnev/portfolio"
-          target="_blank"
+      <div className="flex flex-col space-y-2">
+        <p className="text-sm">
+          Check out{" "}
+          <Link
+            className="underline underline-offset-4"
+            href="https://github.com/albertnev/portfolio"
+            target="_blank"
+          >
+            the code of this portfolio
+          </Link>{" "}
+          on my Github!
+        </p>
+        <a
+          className="text-xs block"
+          href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/"
         >
-          the code of this portfolio
-        </Link>{" "}
-        on my Github!
-      </p>
-      <a
-        className="text-xs"
-        href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/"
-      >
-        SVG Background made by SVGBackgrounds.com.
-      </a>
+          SVG Background made by SVGBackgrounds.com.
+        </a>
+      </div>
     </header>
   );
 };
