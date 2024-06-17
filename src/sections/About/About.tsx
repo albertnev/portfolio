@@ -25,8 +25,8 @@ const About = () => {
           in my personal life.
         </p>
         <p>
-          If I'm not coding, maybe you can find me at the gym, doing some sports
-          such as bouldering or ping-pong,{" "}
+          If I'm not coding, maybe you can find me at the gym, doing some
+          sports,{" "}
           <span className="font-bold">
             waiting patiently for Hollow Knight: Silksong to be finally released
           </span>

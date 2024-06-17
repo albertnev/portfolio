@@ -16,7 +16,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
   return (
     <div className={clsx("relative group", className)}>
       <GlassBackground />
-      <div className="relative z-30">
+      <div className="relative z-20">
         <div>
           <span className="text-sm font-bold opacity-70">
             {`${yearStart} — ${yearEnd}`}

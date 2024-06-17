@@ -3,10 +3,14 @@
 import { clsx } from "clsx";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 import { FaCaretRight } from "react-icons/fa6";
+import { LuMenu } from "react-icons/lu";
 
 const MainMenu = () => {
   const [activeSection, setActiveSection] = useState<string>();
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const menuEntries = [
     { id: "about", title: "About me" },
     { id: "skillset", title: "Skillset" },
@@ -51,32 +55,59 @@ const MainMenu = () => {
   }, []);
 
   return (
-    <ul className="border-l-2 border-cyan-200 space-y-2">
-      {menuEntries.map((page) => {
-        const isActive = activeSection === page.id;
+    <>
+      <div
+        className={clsx(
+          "z-30 fixed top-0 left-0 py-20 justify-center items-center w-full !my-0 bg-cyan-700/20 backdrop-blur-md md:backdrop-blur-none md:static md:flex md:justify-normal md:bg-transparent md:w-auto md:my-auto md:py-0",
+          { flex: menuOpen, hidden: !menuOpen },
+        )}
+      >
+        <ul className="-ml-5 md:border-l-2 md:border-cyan-200 md:ml-0 space-y-2">
+          {menuEntries.map((page) => {
+            const isActive = activeSection === page.id;
 
-        return (
-          <li
-            key={page.id}
-            className={clsx(
-              "relative flex items-center transition-all duration-1000",
-              {
-                "opacity-70": !isActive,
-                "text-cyan-200 font-bold opacity-100 ml-4": isActive,
-              },
-            )}
-          >
-            <FaCaretRight
-              className={clsx("mr-2 transition-opacity duration-1000", {
-                "opacity-0": !isActive,
-                "opacity-100": isActive,
-              })}
-            />
-            <Link href={`#${page.id}`}>{page.title}</Link>
-          </li>
-        );
-      })}
-    </ul>
+            return (
+              <li
+                key={page.id}
+                className={clsx(
+                  "relative flex items-center transition-all duration-1000",
+                  {
+                    "opacity-70": !isActive,
+                    "text-cyan-200 font-bold opacity-100 ml-4": isActive,
+                  },
+                )}
+              >
+                <FaCaretRight
+                  className={clsx(
+                    "block mr-2 transition-opacity duration-1000",
+                    {
+                      "opacity-0": !isActive,
+                      "opacity-100": isActive,
+                    },
+                  )}
+                />
+                <Link href={`#${page.id}`}>{page.title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <button
+        className={clsx(
+          "fixed z-40 top-4 left-3 !mt-0 flex items-center md:hidden p-4 rounded-md backdrop-blur-sm text-2xl",
+          { "bg-transparent": menuOpen, "bg-cyan-700/10": !menuOpen },
+        )}
+        onClick={() => setMenuOpen((current) => !current)}
+      >
+        {menuOpen ? <AiOutlineClose /> : <LuMenu />}
+        {!menuOpen && (
+          <span className="text-xl ml-5">
+            {menuEntries.find((entry) => entry.id === activeSection)?.title ||
+              ""}
+          </span>
+        )}
+      </button>
+    </>
   );
 };
 

@@ -87,7 +87,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
       {!!shownCollection && (
         <div
           className={clsx(
-            "fixed h-screen w-screen top-0 left-0 z-40 bg-slate-900/80 backdrop-blur-sm",
+            "z-50 fixed h-screen w-screen top-0 left-0 bg-slate-900/80 backdrop-blur-sm",
           )}
         >
           <FaTimes
@@ -96,7 +96,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
             title="Close gallery"
           />
           <div className="relative flex items-center justify-center h-full w-full">
-            <ul>
+            <ul className="max-w-[80%]">
               {shownCollection?.map((img, i) => {
                 return (
                   <li
@@ -119,22 +119,26 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
               })}
             </ul>
             {!!shownImg && (
-              <FaArrowLeft
-                className="absolute text-3xl top-auto bottom-auto lg:left-1/4 cursor-pointer"
+              <button
+                className="group absolute text-2xl top-auto bottom-auto left-10 p-2 rounded-md  cursor-pointer flex items-center justify-center bg-cyan-700/50 backdrop-blur-sm md:left-20 lg:left-1/4"
                 onClick={() => {
                   changeShownImg((shownImg || 0) - 1);
                 }}
                 title="Previous image"
-              />
+              >
+                <FaArrowLeft className="relative right-0 transition-all duration-300 group-hover:right-2" />
+              </button>
             )}
             {shownImg < shownCollection.length - 1 && (
-              <FaArrowRight
-                className="absolute text-3xl top-auto bottom-auto lg:right-1/4 cursor-pointer"
+              <button
+                className="group absolute text-2xl top-auto bottom-auto right-10 p-2 rounded-md cursor-pointer flex items-center justify-center bg-cyan-700/50 backdrop-blur-sm md:right-20 lg:right-1/4"
                 onClick={() => {
                   changeShownImg((shownImg || 0) + 1);
                 }}
                 title="Next image"
-              />
+              >
+                <FaArrowRight className="relative left-0 transition-all duration-300 group-hover:left-2" />
+              </button>
             )}
           </div>
         </div>

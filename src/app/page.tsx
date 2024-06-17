@@ -8,10 +8,10 @@ import { WorkExperience } from "@/sections/WorkExperience";
 
 const Home: React.FC = () => {
   return (
-    <div className="relative z-10 lg:flex lg:justify-between lg:gap-8 p-4 md:p-12 lg:p-24 lg:py-0 max-w-screen-xl min-h-screen mx-auto">
+    <div className="relative z-10 px-8 max-w-screen-xl min-h-screen mx-auto pb-24 sm:px-24 md:p-12 md:py-0 md:flex md:justify-between lg:p-24 lg:py-0 md:gap-8">
       <HashScroll />
-      <Header className="py-24 lg:w-1/2 max-h-screen lg:sticky lg:top-0" />
-      <main className="lg:w-1/2 lg:mb-24">
+      <Header className="md:w-1/2 md:pb-12 lg:pb-24" />
+      <main className="md:w-1/2 md:pb-12 lg:pb-24">
         <About />
         <Skillset />
         <WorkExperience />

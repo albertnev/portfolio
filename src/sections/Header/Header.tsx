@@ -4,31 +4,37 @@ import React from "react";
 import { MainMenu } from "@/components/MainMenu";
 import { SocialNetworks } from "@/components/SocialNetworks";
 import { type FCProps } from "@/types/FCProps";
+import { ContactButton } from "./components/ContactButton";
 
 const Header: React.FC<FCProps> = ({ className = "" }) => {
   return (
-    <header className={`flex flex-col justify-between ${className}`}>
+    <header
+      className={`pt-24 max-h-screen flex flex-col justify-between space-y-6 md:pt-16 md:sticky md:top-0 lg:pt-24 ${className}`}
+    >
       <div>
         <h1 className="text-5xl font-bold">Albert Nevado</h1>
         <h2 className="text-xl font-medium mt-2">Senior Frontend Engineer</h2>
-        <p className="mt-4 w-4/5">
+        <p className="my-4 w-4/5 md:w-auto lg:w-4/5">
           My objective is to create applications that are able to make users'
           workflows to achieve a task easier.
         </p>
       </div>
       <MainMenu />
-      <SocialNetworks
-        networks={[
-          {
-            link: "https://github.com/albertnev",
-            type: "github",
-          },
-          {
-            link: "https://www.linkedin.com/in/albertnevado/",
-            type: "linkedin",
-          },
-        ]}
-      />
+      <div className="flex items-center">
+        <SocialNetworks
+          networks={[
+            {
+              link: "https://github.com/albertnev",
+              type: "github",
+            },
+            {
+              link: "https://www.linkedin.com/in/albertnevado/",
+              type: "linkedin",
+            },
+          ]}
+        />
+        <ContactButton className="hidden ml-5" />
+      </div>
       <div className="flex flex-col space-y-2">
         <p className="text-sm">
           Check out{" "}

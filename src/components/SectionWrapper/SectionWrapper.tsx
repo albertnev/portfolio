@@ -24,7 +24,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
     <section
       ref={ref}
       className={clsx(
-        "lg:pt-24 transition-opacity delay-200 duration-1000 ease-in",
+        "pt-24 transition-opacity delay-200 duration-1000 ease-in md:pt-16 lg:pt-24",
         {
           "opacity-0": !inView,
           "opacity-100": inView,

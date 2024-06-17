@@ -18,7 +18,7 @@ const RootLayout = ({
   return (
     <html className="scroll-smooth" lang="en">
       <body
-        className={`${inter.className} h-screen w-full antialiased leading-relaxed text-slate-300 font-light`}
+        className={`${inter.className} h-screen w-full antialiased leading-relaxed text-slate-300 font-light selection:bg-cyan-700`}
       >
         <div className="fixed z-0 top-0 left-0 h-screen w-screen animate-gradient-x background-gradient" />
         {children}
