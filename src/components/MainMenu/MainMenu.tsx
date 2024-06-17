@@ -16,7 +16,7 @@ const menuEntries = [
 ];
 
 const MainMenu = () => {
-  const [activeSection, setActiveSection] = useState<string>();
+  const [activeSection, setActiveSection] = useState<string>("about");
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -97,6 +97,7 @@ const MainMenu = () => {
           "fixed z-40 top-4 left-3 !mt-0 flex items-center md:hidden p-4 rounded-md backdrop-blur-sm text-2xl",
           { "bg-cyan-700/10": !menuOpen, "bg-transparent": menuOpen },
         )}
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
         type="button"
         onClick={() => {
           setMenuOpen((current) => !current);
