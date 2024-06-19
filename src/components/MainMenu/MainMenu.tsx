@@ -7,7 +7,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { FaCaretRight } from "react-icons/fa6";
 import { LuMenu } from "react-icons/lu";
 
-const menuEntries = [
+export const menuEntries = [
   { id: "about", title: "About me" },
   { id: "skill-set", title: "Skill set" },
   { id: "work-experience", title: "Work experience" },
@@ -62,7 +62,10 @@ const MainMenu = () => {
           { flex: menuOpen, hidden: !menuOpen },
         )}
       >
-        <ul className="-ml-5 md:border-l-2 md:border-cyan-200 md:ml-0 space-y-2">
+        <ul
+          className="-ml-5 md:border-l-2 md:border-cyan-200 md:ml-0 space-y-2"
+          data-testid="menu-list"
+        >
           {menuEntries.map((page) => {
             const isActive = activeSection === page.id;
 
@@ -98,6 +101,7 @@ const MainMenu = () => {
           "fixed z-40 top-4 left-3 !mt-0 flex items-center md:hidden p-4 rounded-md backdrop-blur-sm text-2xl",
           { "bg-cyan-700/10": !menuOpen, "bg-transparent": menuOpen },
         )}
+        data-testid="menu-toggle-button"
         type="button"
         onClick={() => {
           setMenuOpen((current) => !current);
@@ -105,7 +109,7 @@ const MainMenu = () => {
       >
         {menuOpen ? <AiOutlineClose /> : <LuMenu />}
         {!menuOpen && (
-          <span className="text-xl ml-5">
+          <span className="text-xl font-bold ml-5">
             {menuEntries.find((entry) => entry.id === activeSection)?.title ??
               ""}
           </span>

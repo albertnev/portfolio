@@ -4,7 +4,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 import { type FCProps } from "@/types/FCProps";
 
-interface SocialNetworksProps extends FCProps {
+export interface SocialNetworksProps extends FCProps {
   networks: { link: string; type: "github" | "linkedin" | "instagram" }[];
 }
 

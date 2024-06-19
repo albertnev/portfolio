@@ -13,7 +13,8 @@ const TechPill: React.FC<TechPillProps> = ({ className, tech }) => {
     <span
       className={`p-2 inline-flex items-center justify-center border-cyan-200 border whitespace-nowrap px-4 rounded-md text-xs bg-cyan-700 bg-opacity-40 text-cyan-200 ${className}`}
     >
-      <TechIcon className="inline-block mr-2 text-base" /> {TechTypes[tech]}
+      <TechIcon className="inline-block mr-2 text-base" />{" "}
+      <span>{TechTypes[tech]}</span>
     </span>
   );
 };

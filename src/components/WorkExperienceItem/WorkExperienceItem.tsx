@@ -10,7 +10,9 @@ import { TechPill } from "../TechPill";
 import { type FCProps } from "@/types/FCProps";
 import { type WorkExperienceItemDto } from "@/types/WorkExperienceItemDto";
 
-interface WorkExperienceItemProps extends FCProps, WorkExperienceItemDto {}
+export interface WorkExperienceItemProps
+  extends FCProps,
+    WorkExperienceItemDto {}
 
 const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
   className = "",
@@ -50,17 +52,17 @@ const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
             <CollapsibleContent className="my-4">
               <ul className="flex flex-col space-y-2 pl-2 [&>li]:text-sm [&>li]:flex [&>li]:items-center [&>li_svg]:mr-4 [&>li_svg]:shrink-0">
                 {!!milestones && (
-                  <li>
+                  <li data-testid="work-experience-milestone">
                     <LuMilestone title="Milestones" /> <span>{milestones}</span>
                   </li>
                 )}
                 {!!devops && (
-                  <li>
+                  <li data-testid="work-experience-devops">
                     <GrDeploy title="Devops workflow" /> <span>{devops}</span>
                   </li>
                 )}
                 {!!projectManagement && (
-                  <li>
+                  <li data-testid="work-experience-project-management">
                     <FaNetworkWired title="Project management characteristics" />{" "}
                     <span>{projectManagement}</span>
                   </li>
