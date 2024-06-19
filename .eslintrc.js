@@ -10,15 +10,23 @@ module.exports = {
     require.resolve("@vercel/style-guide/eslint/next"),
     require.resolve("@vercel/style-guide/eslint/typescript"),
     "plugin:typescript-sort-keys/recommended",
+    "plugin:vitest/legacy-recommended",
     "prettier",
   ],
   parserOptions: {
     project,
   },
-  plugins: ["jsx-a11y", "typescript-sort-keys", "sort-destructure-keys"],
+  plugins: [
+    "jsx-a11y",
+    "vitest",
+    "typescript-sort-keys",
+    "sort-destructure-keys",
+  ],
   rules: {
-    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/unbound-method": "off",
     "import/no-default-export": "off",
     "import/no-extraneous-dependencies": [
       "error",
@@ -43,7 +51,12 @@ module.exports = {
       },
     ],
     "no-console": "warn",
-    "no-implicit-coercion": ["error", { allow: ["!!"] }],
+    "no-implicit-coercion": [
+      "error",
+      {
+        allow: ["!!"],
+      },
+    ],
     "no-param-reassign": [
       "error",
       {
