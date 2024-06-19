@@ -4,7 +4,7 @@ import { skillsets } from "@/data";
 
 const Skillset = () => {
   return (
-    <SectionWrapper id="skillset" title="Skillset">
+    <SectionWrapper id="skill-set" title="Skillset">
       <ul className="grid grid-cols-3 gap-x-5 gap-y-8 md:grid-cols-4 lg:gap-x-8 lg:gap-y-10">
         {skillsets
           .slice()
