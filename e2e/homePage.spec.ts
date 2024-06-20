@@ -1,7 +1,8 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Home Page", () => {
-  test("has the right title and description", async ({ page }) => {
+  test("has the right title and description", async ({ baseURL, page }) => {
+    console.log({ baseURL });
     await page.goto("/");
     await expect(page).toHaveTitle("Albert Nevado - Portfolio");
 
