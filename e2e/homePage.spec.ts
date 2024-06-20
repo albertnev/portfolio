@@ -1,8 +1,12 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Home Page", () => {
-  test("has the right title and description", async ({ baseURL, page }) => {
-    console.log({ baseURL });
+  test("has the right title and description", async ({ page }) => {
+    console.log({
+      vercel: process.env.VERCEL_AUTOMATION_BYPASS_SECRET
+        ? process.env.VERCEL_AUTOMATION_BYPASS_SECRET.substring(0, 4)
+        : "not set",
+    });
     await page.goto("/");
     await expect(page).toHaveTitle("Albert Nevado - Portfolio");
 
