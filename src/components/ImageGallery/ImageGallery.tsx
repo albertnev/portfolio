@@ -1,10 +1,11 @@
 "use client";
 
 import { clsx } from "clsx";
-import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+
+import { ImageWithLoader } from "../ImageWithLoader";
 
 import { type FCProps } from "@/types/FCProps";
 import { handleAccessibleKeyPress } from "@/utils/handleAccessibleKeyPress";
@@ -80,7 +81,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
                   handleAccessibleKeyPress(e, setShownCollectionCurrent)
                 }
               >
-                <Image
+                <ImageWithLoader
                   alt={lastImage.description}
                   className="object-cover"
                   height={500}
@@ -125,7 +126,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
                       hidden: i !== shownImg,
                     })}
                   >
-                    <Image
+                    <ImageWithLoader
                       alt={img.description}
                       className="object-cover"
                       height={500}
