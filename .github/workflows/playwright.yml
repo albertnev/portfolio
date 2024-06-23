@@ -36,13 +36,18 @@ jobs:
 
       - name: Initialize snapshots
         if: ${{steps.cache.outputs.cache-hit != 'true' || inputs.update-snapshots == 'true'}}
-        run: npx playwright test --update-snapshots
+        env:
+          BASE_URL: ${{ github.event.deployment_status.environment_url }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+        run: npm run e2e -- --update-snapshots
 
       - name: Run Playwright tests
+        if: ${{steps.cache.outputs.cache-hit == 'true' && inputs.update-snapshots != 'true'}}
         env:
           BASE_URL: ${{ github.event.deployment_status.environment_url }}
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: npm run e2e
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:
