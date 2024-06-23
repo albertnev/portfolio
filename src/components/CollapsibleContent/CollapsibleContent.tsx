@@ -26,6 +26,7 @@ const CollapsibleContent: React.FC<CollapsibleContentProps> = ({
           "flex items-center text-cyan-200 text-sm underline underline-offset-4",
           { "mb-4": isShown },
         )}
+        data-testid="collapsible-content-toggle"
         type="button"
         onClick={() => {
           setIsShown((current) => !current);

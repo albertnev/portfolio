@@ -54,7 +54,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
   return (
     <>
       <ul
-        className={`grid grid-cols-2 md:grid-cols-3 gap-4 select-none ${className}`}
+        className={`imageGallery__list grid grid-cols-2 md:grid-cols-3 gap-4 select-none ${className}`}
       >
         {collections.map((collection) => {
           const lastImage = collection.images.at(-1);
@@ -74,6 +74,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
             >
               <div
                 className="group relative overflow-hidden aspect-square rounded-lg cursor-pointer"
+                data-testid="image-gallery-trigger"
                 role="button"
                 tabIndex={0}
                 onClick={setShownCollectionCurrent}
@@ -125,6 +126,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
                       block: i === shownImg,
                       hidden: i !== shownImg,
                     })}
+                    data-testid={`image-gallery-image-${img.src}`}
                   >
                     <ImageWithLoader
                       alt={img.description}

@@ -36,6 +36,7 @@ module.exports = {
           "**/*.config.ts",
           "**/*.spec.tsx",
           "**/setupTests.ts",
+          "**/test-utils/*.*",
           "/src/mocks/*.*",
         ],
         packageDir: "./",

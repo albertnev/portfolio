@@ -75,8 +75,8 @@ const MainMenu = () => {
                 className={clsx(
                   "relative flex items-center transition-all duration-1000",
                   {
+                    "active text-cyan-200 font-bold opacity-100 ml-4": isActive,
                     "opacity-70": !isActive,
-                    "text-cyan-200 font-bold opacity-100 ml-4": isActive,
                   },
                 )}
               >
@@ -101,7 +101,7 @@ const MainMenu = () => {
           "fixed z-40 top-4 left-3 !mt-0 flex items-center md:hidden p-4 rounded-md backdrop-blur-sm text-2xl",
           { "bg-cyan-700/10": !menuOpen, "bg-transparent": menuOpen },
         )}
-        data-testid="menu-toggle-button"
+        data-testid={`menu-${menuOpen ? "close" : "open"}-button`}
         type="button"
         onClick={() => {
           setMenuOpen((current) => !current);

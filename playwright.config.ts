@@ -5,32 +5,28 @@ export default defineConfig({
   fullyParallel: true,
   projects: [
     {
+      grepInvert: /@mobile/,
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
     },
     {
+      grepInvert: /@mobile/,
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
     },
     {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
-    },
-    {
-      name: "Mobile Chrome",
-      use: { ...devices["Pixel 5"] },
-    },
-    {
-      name: "Mobile Safari",
-      use: { ...devices["iPhone 12"] },
-    },
-    {
-      name: "Microsoft Edge",
+      grepInvert: /@mobile/,
+      name: "microsoft-edge",
       use: { ...devices["Desktop Edge"], channel: "msedge" },
+    },
+    {
+      grepInvert: /@desktop/,
+      name: "mobile-chrome",
+      use: { ...devices["Pixel 5"] },
     },
   ],
   reporter: "html",
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 2 : 1,
   testDir: "./e2e",
   use: {
     baseURL: process.env.BASE_URL ?? "http://localhost:3000",
@@ -40,5 +36,5 @@ export default defineConfig({
     },
     trace: "on-first-retry",
   },
-  workers: process.env.CI ? 1 : undefined,
+  workers: 1,
 });

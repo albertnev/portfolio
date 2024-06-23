@@ -35,7 +35,12 @@ const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
   };
 
   return (
-    <div className={clsx("relative group", className)}>
+    <div
+      className={clsx(
+        "workExperienceItem__container relative group",
+        className,
+      )}
+    >
       <GlassBackground />
       <div className="relative z-20">
         <div>
@@ -50,7 +55,7 @@ const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
           {!!description && <p>{description}</p>}
           {(!!milestones || !!devops || !!projectManagement) && (
             <CollapsibleContent className="my-4">
-              <ul className="flex flex-col space-y-2 pl-2 [&>li]:text-sm [&>li]:flex [&>li]:items-center [&>li_svg]:mr-4 [&>li_svg]:shrink-0">
+              <ul className="workExperienceItem__featuresContainer flex flex-col space-y-2 pl-2 [&>li]:text-sm [&>li]:flex [&>li]:items-center [&>li_svg]:mr-4 [&>li_svg]:shrink-0">
                 {!!milestones && (
                   <li data-testid="work-experience-milestone">
                     <LuMilestone title="Milestones" /> <span>{milestones}</span>

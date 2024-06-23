@@ -10,7 +10,9 @@
     "test": "vitest run",
     "test-coverage": "vitest run --coverage",
     "e2e": "npx playwright test",
-    "e2e-show": "npx playwright show-report"
+    "e2e-show": "npx playwright show-report",
+    "e2e-record-mobile": "npx playwright codegen --device=\"Pixel 5\" http://localhost:3000",
+    "e2e-record-desktop": "npx playwright codegen --device=\"Desktop Chrome\" http://localhost:3000"
   },
   "dependencies": {
     "@types/jest": "^29.5.12",
