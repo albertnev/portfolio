@@ -15,21 +15,23 @@ const EducationItem: React.FC<EducationItemProps> = ({
   yearStart,
 }) => {
   return (
-    <div className={clsx("relative group", className)}>
+    <div className={clsx("educationItem__container relative group", className)}>
       <GlassBackground />
       <div className="relative z-20">
         <div>
-          <span className="text-sm font-bold opacity-70">
+          <span className="educationItem__year text-sm font-bold opacity-70">
             {`${yearStart} — ${yearEnd}`}
           </span>
         </div>
         <div>
-          <h4 className="text-lg font-bold mb-1 group-hover:text-cyan-200">
+          <h4 className="educationItem__title text-lg font-bold mb-1 group-hover:text-cyan-200">
             {title}
           </h4>
         </div>
         <div>
-          <span className="text-sm font-bold opacity-70">{school}</span>
+          <span className="educationItem__school text-sm font-bold opacity-70">
+            {school}
+          </span>
         </div>
       </div>
     </div>

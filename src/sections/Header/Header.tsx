@@ -37,7 +37,7 @@ const Header: React.FC<FCProps> = ({ className = "" }) => {
         <ContactButton className="hidden ml-5" />
       </div>
       <div className="flex flex-col space-y-2">
-        <p className="text-sm">
+        <p className="header__portfolioLink text-sm">
           Check out{" "}
           <Link
             className="underline underline-offset-4"
@@ -49,7 +49,7 @@ const Header: React.FC<FCProps> = ({ className = "" }) => {
           on my Github!
         </p>
         <a
-          className="text-xs block"
+          className="header__svgAttribution text-xs block"
           href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/"
         >
           SVG Background made by SVGBackgrounds.com.

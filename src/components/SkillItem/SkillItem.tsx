@@ -17,9 +17,12 @@ const SkillItem: React.FC<SkillItemProps> = ({ level, skill }) => {
       className="group flex flex-col justify-center gap-2 flex-wrap items-center"
       data-testid={`skill-${skill}`}
     >
-      <SkillIcon className="relative text-4xl transition-all duration-500 group-hover:-translate-y-3 group-hover:drop-shadow-hard" />
-      <span>{TechTypes[skill]}</span>
-      <ul className="flex flex-row gap-1" data-testid={`skill-${skill}-level`}>
+      <SkillIcon className="skillItem__icon relative text-4xl transition-all duration-500 group-hover:-translate-y-3 group-hover:drop-shadow-hard" />
+      <span className="skillItem__name">{TechTypes[skill]}</span>
+      <ul
+        className="skillItem__levels flex flex-row gap-1"
+        data-testid={`skill-${skill}-level`}
+      >
         {[...Array(5).keys()].map((i) => (
           <li
             key={`skill-${skill}-level-${i}`}

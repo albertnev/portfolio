@@ -4,14 +4,6 @@ import { MainMenu } from "..";
 import { menuEntries } from "../MainMenu";
 
 describe("Component MainMenu", () => {
-  const MockIntersectionObserver = vi.fn(() => ({
-    disconnect: vi.fn(),
-    observe: vi.fn(),
-    takeRecords: vi.fn(),
-    unobserve: vi.fn(),
-  }));
-  vi.stubGlobal("IntersectionObserver", MockIntersectionObserver);
-
   const renderWithProps = () => {
     return render(<MainMenu />);
   };

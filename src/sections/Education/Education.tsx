@@ -6,7 +6,10 @@ import { sortByYear } from "@/utils/sortByYear";
 const Education = () => {
   return (
     <SectionWrapper id="education" title="Education">
-      <ol className="flex flex-col space-y-12">
+      <ol
+        className="education__list flex flex-col space-y-12"
+        data-testid="education-list"
+      >
         {educationItems
           .slice()
           .sort(sortByYear)

@@ -7,6 +7,12 @@ export default defineConfig({
   test: {
     coverage: {
       include: ["src/**/*"],
+      exclude: [
+        ...(configDefaults.coverage.exclude || []),
+        "src/app/layout.tsx",
+        "src/app/icon.tsx",
+        "src/fonts/**",
+      ],
       reporter: ["text", "html"],
     },
     css: true,

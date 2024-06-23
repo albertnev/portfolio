@@ -19,7 +19,10 @@ const SocialNetworks: React.FC<SocialNetworksProps> = ({
   };
 
   return (
-    <ul className={`flex space-x-5 ${className}`}>
+    <ul
+      className={`flex space-x-5 ${className}`}
+      data-testid="social-networks-list"
+    >
       {networks.map(({ link, type }) => {
         const Icon = networkIcons[type];
         return (

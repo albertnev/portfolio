@@ -44,15 +44,17 @@ const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
       <GlassBackground />
       <div className="relative z-20">
         <div>
-          <span className="text-sm font-bold opacity-70">
+          <span className="workExperienceItem__dateCompany text-sm font-bold opacity-70">
             {getDateRange()} · {company}
           </span>
         </div>
         <div>
-          <h3 className="text-lg font-bold mb-1 group-hover:text-cyan-200">
+          <h3 className="workExperienceItem__jobTitle text-lg font-bold mb-1 group-hover:text-cyan-200">
             {jobTitle}
           </h3>
-          {!!description && <p>{description}</p>}
+          {!!description && (
+            <p className="workExperienceItem__description">{description}</p>
+          )}
           {(!!milestones || !!devops || !!projectManagement) && (
             <CollapsibleContent className="my-4">
               <ul className="workExperienceItem__featuresContainer flex flex-col space-y-2 pl-2 [&>li]:text-sm [&>li]:flex [&>li]:items-center [&>li_svg]:mr-4 [&>li_svg]:shrink-0">
