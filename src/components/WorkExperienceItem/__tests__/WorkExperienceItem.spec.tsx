@@ -37,8 +37,8 @@ describe("Component WorkExperienceItem", () => {
         `${getDateRange(defaultProps.yearStart, defaultProps.yearEnd)} · ${defaultProps.company}`,
       ),
     ).toBeInTheDocument();
-    expect(screen.getByText(defaultProps.description!)).toBeInTheDocument();
-    expect(screen.getByText(defaultProps.description!)).toBeInTheDocument();
+    expect(screen.getByText(defaultProps.description)).toBeInTheDocument();
+    expect(screen.getByText(defaultProps.description)).toBeInTheDocument();
   });
 
   it("renders 'Present' if there is no yearEnd", () => {
