@@ -9,6 +9,13 @@ on:
         description: "Update snapshots?"
         type: boolean
 
+  # Allow updating snapshots during automatic runs
+  workflow_dispatch:
+    inputs:
+      update-snapshots:
+        description: "Update snapshots?"
+        type: boolean
+
 jobs:
   tests-e2e:
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
@@ -42,7 +49,6 @@ jobs:
         run: npm run e2e -- --update-snapshots
 
       - name: Run Playwright tests
-        if: ${{steps.cache.outputs.cache-hit == 'true' && inputs.update-snapshots != 'true'}}
         env:
           BASE_URL: ${{ github.event.deployment_status.environment_url }}
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
