@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Welcome to my portfolio
 
-## Getting Started
+This is my portfolio, a personal project made with NextJS, TailwindCSS and deployed to Vercel. You can [see it in action here](https://albertnev.vercel.app/).
 
-First, run the development server:
+### Characteristics
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- React 18.
+- NextJS 14.
+- TailwindCSS 3.
+- Unit testing with Vitest and RTL, with over 90% code coverage.
+- E2E testing with Playwright.
+- CI with Github Actions.
+- Linting with (modified) official Vercel style-guide.
+- Lighthouse score: 100.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Roadmap
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+###### V1
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [x] Create portfolio.
+- [x] Add unit testing with Vitest.
+- [x] Publish to Vercel.
+- [x] Implement E2E testing with Playwright.
 
-## Learn More
+###### V2
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] Add contact form with server actions.
+- [ ] Implement captcha to avoid bots and spam.
+- [ ] Add validation to discard offers not fitting my criteria.
+- [ ] Integrate e-mail API to send form information.
