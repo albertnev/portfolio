@@ -27,6 +27,8 @@ export default defineConfig({
   ],
   reporter: "html",
   retries: process.env.CI ? 2 : 1,
+  snapshotPathTemplate:
+    "{snapshotDir}/{testFileDir}/{testFileName}-snapshots/{arg}{-projectName}{ext}",
   testDir: "./e2e",
   use: {
     baseURL: process.env.BASE_URL ?? "http://localhost:3000",
