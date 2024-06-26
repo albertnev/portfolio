@@ -24,7 +24,9 @@ This is my portfolio, a personal project made with NextJS, TailwindCSS and deplo
 
 ###### V2
 
+- [ ] Add Google Analytics integration.
 - [ ] Add contact form with server actions.
-- [ ] Implement captcha to avoid bots and spam.
-- [ ] Add validation to discard offers not fitting my criteria.
-- [ ] Integrate e-mail API to send form information.
+  - [ ] Implement captcha to avoid bots and spam.
+  - [ ] Add content validation and advice to discard offers not fitting my criteria.
+  - [ ] Integrate e-mail API to send form information.
+- [ ] Add relevant metadata for SEO, and a sitemap.
