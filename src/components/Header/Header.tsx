@@ -10,7 +10,7 @@ import { type FCProps } from "@/types/FCProps";
 const Header: React.FC<FCProps> = ({ className = "" }) => {
   return (
     <header
-      className={`pt-24 max-h-screen flex flex-col justify-between space-y-6 md:pt-16 md:sticky md:top-0 lg:pt-24 ${className}`}
+      className={`section-pt max-h-screen flex flex-col justify-between space-y-6 md:sticky md:top-0  ${className}`}
     >
       <div>
         <h1 className="text-5xl font-bold">Albert Nevado</h1>
@@ -34,7 +34,9 @@ const Header: React.FC<FCProps> = ({ className = "" }) => {
             },
           ]}
         />
-        <ContactButton className="hidden ml-5" />
+        {process.env.CONTACT_FORM_ENABLED === "true" && (
+          <ContactButton className="ml-5" />
+        )}
       </div>
       <div className="flex flex-col space-y-2">
         <p className="header__portfolioLink text-sm">

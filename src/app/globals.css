@@ -20,6 +20,46 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .half-screen {
+    @apply md:w-1/2 md:pb-12 lg:pb-24;
+  }
+
+  .section-pt {
+    @apply pt-24 md:pt-16 lg:pt-24;
+  }
+}
+
+@layer components {
+  select option {
+    @apply bg-slate-800;
+    color: white;
+  }
+
+  .no-spinner,
+  .no-spinner input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button,
+  .no-spinner input[type="number"]::-webkit-outer-spin-button,
+  .no-spinner input[type="number"]::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+
+  .link-button {
+    @apply flex items-center justify-center opacity-85 p-2 px-6 rounded font-medium bg-slate-300 text-slate-700 hover:opacity-100;
+  }
+
+  .link-button > svg.left {
+    @apply mr-2;
+  }
+
+  .link-button > svg.right {
+    @apply ml-2;
+  }
 }
 
 .background-gradient {

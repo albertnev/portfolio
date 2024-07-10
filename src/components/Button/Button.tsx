@@ -1,32 +1,41 @@
 "use client";
 
+import { type ComponentProps } from "react";
+
 import { type FCProps } from "@/types/FCProps";
 
-export interface ButtonProps extends FCProps {
+export interface ButtonProps extends FCProps, ComponentProps<"button"> {
   icon?: React.ComponentType<{
     className?: string;
   }>;
-  onClick: () => void;
+  iconPosition?: "left" | "right";
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
   children,
   className = "",
   icon,
+  iconPosition = "left",
   onClick,
+  ...rest
 }) => {
   const IconComponent = icon;
 
   return (
     <button
-      className={`flex items-center justify-center opacity-85 p-2 px-6 rounded font-medium bg-slate-300 text-slate-700 hover:opacity-100 ${className}`}
+      className={`link-button disabled:opacity-40 ${className}`}
       type="button"
       onClick={onClick}
+      {...rest}
     >
-      {IconComponent ? (
-        <IconComponent className="mr-2" data-testid="button-icon" />
+      {IconComponent && iconPosition === "left" ? (
+        <IconComponent className="left" data-testid="button-icon" />
       ) : null}
       <span>{children}</span>
+      {IconComponent && iconPosition === "right" ? (
+        <IconComponent className="right" data-testid="button-icon" />
+      ) : null}
     </button>
   );
 };

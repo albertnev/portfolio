@@ -12,6 +12,7 @@ export default defineConfig({
         "src/app/layout.tsx",
         "src/app/icon.tsx",
         "src/fonts/**",
+        "src/types/**",
       ],
       reporter: ["text", "html"],
     },
