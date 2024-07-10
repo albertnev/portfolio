@@ -11,8 +11,8 @@ import { validatePositionInformation } from "@/utils/formValidation";
 const PositionInformation: React.FC<FormStepProps> = ({
   id,
   isActive,
+  onBack,
   onNext,
-  onPrev,
   onSubmit,
 }) => {
   const hasSubmit = !!onSubmit;
@@ -26,8 +26,8 @@ const PositionInformation: React.FC<FormStepProps> = ({
       isActive={isActive}
       isPending={isPending}
       legend="Position information"
+      onBack={onBack}
       onNext={!hasSubmit ? validateAndSubmit : undefined}
-      onBack={onPrev}
       onSubmit={hasSubmit ? validateAndSubmit : undefined}
     >
       <Input

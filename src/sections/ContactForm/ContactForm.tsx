@@ -126,8 +126,8 @@ const ContactForm = () => {
                 key={step.key}
                 id={step.key}
                 isActive={activeStep === i}
+                onBack={i !== 0 ? prevStep : undefined}
                 onNext={i < steps.length - 1 ? nextStep : undefined}
-                onPrev={i !== 0 ? prevStep : undefined}
                 onSubmit={i === steps.length - 1 ? submitForm : undefined}
               />
             );

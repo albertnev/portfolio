@@ -13,8 +13,8 @@ import { validateCompanyInformation } from "@/utils/formValidation";
 const CompanyInformation: React.FC<FormStepProps> = ({
   id,
   isActive,
+  onBack,
   onNext,
-  onPrev,
   onSubmit,
 }) => {
   const hasSubmit = !!onSubmit;
@@ -28,8 +28,8 @@ const CompanyInformation: React.FC<FormStepProps> = ({
       isActive={isActive}
       isPending={isPending}
       legend="Company information"
+      onBack={onBack}
       onNext={!hasSubmit ? validateAndSubmit : undefined}
-      onBack={onPrev}
       onSubmit={hasSubmit ? validateAndSubmit : undefined}
     >
       <Input

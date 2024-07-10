@@ -12,8 +12,8 @@ import { validateJobDescription } from "@/utils/formValidation";
 const JobDescription: React.FC<FormStepProps> = ({
   id,
   isActive,
+  onBack,
   onNext,
-  onPrev,
   onSubmit,
 }) => {
   const hasSubmit = !!onSubmit;
@@ -27,8 +27,8 @@ const JobDescription: React.FC<FormStepProps> = ({
       isActive={isActive}
       isPending={isPending}
       legend="Job description"
+      onBack={onBack}
       onNext={!hasSubmit ? validateAndSubmit : undefined}
-      onBack={onPrev}
       onSubmit={hasSubmit ? validateAndSubmit : undefined}
     >
       <Select

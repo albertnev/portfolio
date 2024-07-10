@@ -1,9 +1,9 @@
 type FormStepSubmit = (formData: Record<string, string>) => Promise<void>;
 
 export interface FormStepProps {
-  id?: string;
+  id: string;
   isActive?: boolean;
+  onBack?: () => void;
   onNext?: FormStepSubmit;
-  onPrev?: () => void;
   onSubmit?: FormStepSubmit;
 }
