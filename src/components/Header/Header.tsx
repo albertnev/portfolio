@@ -16,8 +16,8 @@ const Header: React.FC<FCProps> = ({ className = "" }) => {
         <h1 className="text-5xl font-bold">Albert Nevado</h1>
         <h2 className="text-xl font-medium mt-2">Senior Frontend Engineer</h2>
         <p className="my-4 w-4/5 md:w-auto lg:w-4/5">
-          My objective is to create applications that are able to make users'
-          workflows to achieve a task easier.
+          My goal is to create applications that allow users to perform specific
+          tasks in a more efficient and smoother way.
         </p>
       </div>
       <MainMenu />

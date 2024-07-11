@@ -15,7 +15,7 @@ const CollapsibleContent: React.FC<CollapsibleContentProps> = ({
   children,
   className,
   shownByDefault = false,
-  title = "More about it",
+  title = "See more",
 }) => {
   const [isShown, setIsShown] = useState(shownByDefault);
 

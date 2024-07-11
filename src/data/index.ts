@@ -6,11 +6,11 @@ export const workExperienceItems: WorkExperienceItemDto[] = [
   {
     company: "Mimacom",
     description:
-      "Development of a CV web assistant using React and Redux with persistent data, where I created a custom templating processor. Also created from scratch a banking intranet to manage their transactions and orders, using RTKQ for caching purposes.",
+      "Development of a CV web assistant using React and Redux with persistent data, where I created a custom templating processor. I also created from scratch a banking intranet to manage their transactions and orders, using RTKQ for caching purposes.",
     devops: "Automated unit-tests with CI in Gitlab.",
     jobTitle: "Senior Frontend Engineer",
     milestones:
-      "Could teach and guide people under my charge. Built scalable projects from scratch with an easy to adapt to changes philosophy.",
+      "Training and guiding people I was in charge of. Creating scalable projects from scratch with the ability to adapt to unexpected changes.",
     projectManagement: "Multidisciplinary teams applying SCRUM framework.",
     techStack: [
       "Html",
@@ -31,7 +31,7 @@ export const workExperienceItems: WorkExperienceItemDto[] = [
       "Development of a project using NextJS to help the businesses reduce their non-attendance ratio in their reservations.",
     jobTitle: "Senior Frontend Engineer",
     milestones: "Quick learning curve for a big and complex project.",
-    projectManagement: "Weekly sprint based workflow using Kanban.",
+    projectManagement: "Weekly sprint-based workflow using Kanban.",
     techStack: ["Html", "Css", "Js", "React", "Redux", "NextJs"],
     yearEnd: 2022,
     yearStart: 2022,
@@ -39,11 +39,11 @@ export const workExperienceItems: WorkExperienceItemDto[] = [
   {
     company: "Pasiona & Travelport",
     description:
-      "Development and maintenance for a leading worldwide travel retail company, migrating some desktop functionalities and creating new features in their new cloud application, both in frontend with ReactJS and in backend microservices with NodeJS and GraphQL.",
+      "Development and maintenance of a cloud application for a leading worldwide travel retail company, migrating some desktop functionalities and creating new features, both in frontend with ReactJS and in backend microservices with NodeJS and GraphQL.",
     devops: "TBD with feature flags and CI/CD in multiple environments.",
     jobTitle: "Frontend Developer",
     milestones:
-      "Quick learning curve for an extremly complex project, becoming one of the references for the team in a short period of time.",
+      "Quick learning curve for an extremely complex project, becoming a key point of reference for the team within a short period of time.",
     projectManagement:
       "International multidisciplinary teams applying SAFe framework. Periodic PI plannings with strict dependency management between features.",
     techStack: [
@@ -87,10 +87,10 @@ export const workExperienceItems: WorkExperienceItemDto[] = [
   {
     company: "1d3a Analógico y Digital",
     description:
-      "Design, development and maintenance of all the web related products, such as webpage, client management dashboards, mailings, marketing events, as well as server configuration, maintenance and database setup and management.",
+      "Design, development and maintenance of all the web-related products, such as webpage, client management dashboards, mailings, marketing events, as well as server configuration, maintenance and database setup and management.",
     jobTitle: "Fullstack Developer",
     milestones:
-      "Managed and configured CentOS servers to provide service to hundreds of our clients concurrently hosting all of our applications, and configuring external scalable drives to add a layer of security.",
+      "Management and configuration of CentOs servers, providing service to hundreds of our clients concurrently hosting all of our applications, and configuring external scalable drives to add a layer of security.",
     techStack: ["Html", "Css", "Js", "Php", "MySql"],
     yearEnd: 2014,
     yearStart: 2010,

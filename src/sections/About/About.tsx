@@ -8,7 +8,7 @@ const About = () => {
       <div className="flex flex-col space-y-5">
         <p>
           My interest in programming began when I was 17 years old, and a year
-          later I was totally merged in it. From there, I've been able to create
+          later I was fully immersed in it. Since then, I've been able to create
           some pretty interesting applications for the different projects I've
           worked in,{" "}
           <span className="font-bold">growing and evolving everyday</span> as
@@ -25,12 +25,12 @@ const About = () => {
           in my personal life.
         </p>
         <p>
-          If I'm not coding, maybe you can find me at the gym, doing some
-          sports,{" "}
+          When I'm not coding, you may find me at the gym, doing some sports,{" "}
           <span className="font-bold">
             waiting patiently for Hollow Knight: Silksong to be finally released
           </span>
-          , or messing with 3D sculpting, 3D printing and painting what I print.
+          , or messing with 3D sculpting, 3D printing and painting whatever I
+          have been printing previously.
         </p>
       </div>
     </SectionWrapper>
