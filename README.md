@@ -7,6 +7,7 @@ This is my portfolio, a personal project made with NextJS, TailwindCSS and deplo
 - React 18.
 - NextJS 14.
 - TailwindCSS 3.
+- Fully responsive.
 - Unit testing with Vitest and RTL, with over 90% code coverage.
 - E2E testing with Playwright.
 - CI with Github Actions.
@@ -25,8 +26,8 @@ This is my portfolio, a personal project made with NextJS, TailwindCSS and deplo
 ###### V2
 
 - [ ] Add Google Analytics integration.
-- [ ] Add contact form with server actions.
-  - [ ] Implement captcha to avoid bots and spam.
-  - [ ] Add content validation and advice to discard offers not fitting my criteria.
-  - [ ] Integrate e-mail API to send form information.
+- [x] Add contact form with server actions.
+  - [x] Implement captcha to avoid bots and spam.
+  - [x] Add content validation and advice to discard offers not fitting my criteria.
+  - [x] Integrate e-mail API to send form information.
 - [ ] Add relevant metadata for SEO, and a sitemap.

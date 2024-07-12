@@ -33,7 +33,7 @@ const ConfirmationEmailTemplate = () => {
                   alt="An e-mail with a heart"
                   className="inline-block"
                   height="100"
-                  src={`${baseUrl}/images/email_heart.png`}
+                  src={`${baseUrl}/email_heart.png`}
                   width="100"
                 />
               </div>
