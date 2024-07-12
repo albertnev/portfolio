@@ -14,6 +14,7 @@ const ContactHeader: React.FC<FCProps> = ({ className = "" }) => {
         <Link
           className="text-xl font-medium mt-2 flex items-center hover:text-cyan-200"
           href="/"
+          scroll={false}
         >
           <FaArrowLeft className="mr-2" /> <span>Go back to Portfolio</span>
         </Link>

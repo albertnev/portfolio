@@ -7,7 +7,7 @@ import { type FCProps } from "@/types/FCProps";
 
 const ContactButton: React.FC<FCProps> = (props) => {
   return (
-    <LinkButton {...props} href="/contact" icon={FaMessage}>
+    <LinkButton {...props} href="/contact" icon={FaMessage} scroll={false}>
       Contact me
     </LinkButton>
   );

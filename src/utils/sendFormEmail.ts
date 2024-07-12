@@ -1,6 +1,7 @@
 "use server";
 
 import { render } from "@react-email/components";
+import path from "node:path";
 import { createTransport } from "nodemailer";
 import type Mail from "nodemailer/lib/mailer";
 
@@ -17,7 +18,16 @@ export const sendFormEmail = async (data: Record<string, string>) => {
     service: "gmail",
   });
 
+  const emailImagePath = path.join(process.cwd(), "public", "email_heart.png");
+
   const jobMailOptions: Mail.Options = {
+    attachments: [
+      {
+        cid: "emailheart@jobofferemail.albertnev.com",
+        filename: "email_heart.png",
+        path: emailImagePath,
+      },
+    ],
     from: { address: process.env.EMAIL_ADDRESS!, name: "Portfolio Job Offer" },
     html: render(EmailTemplate(data as unknown as EmailTemplateProps)),
     replyTo: data.email,
@@ -26,6 +36,13 @@ export const sendFormEmail = async (data: Record<string, string>) => {
   };
 
   const confirmationMailOptions: Mail.Options = {
+    attachments: [
+      {
+        cid: "emailheart@confirmationemail.albertnev.com",
+        filename: "email_heart.png",
+        path: emailImagePath,
+      },
+    ],
     from: { address: process.env.EMAIL_ADDRESS!, name: "Albert Nevado" },
     html: render(ConfirmationEmailTemplate()),
     replyTo: "no-reply@noreply.com",
@@ -41,7 +58,7 @@ export const sendFormEmail = async (data: Record<string, string>) => {
     await transport.sendMail(confirmationMailOptions);
   } catch (err) {
     return {
-      errors: { mail: err },
+      errors: { mail: JSON.stringify(err) },
       hasErrors: true,
     };
   }

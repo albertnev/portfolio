@@ -73,8 +73,15 @@ const ContactForm: React.FC<ContactFormProps> = ({
     async (data: Record<string, string>) => {
       try {
         // Send also last step data included to avoid state syncing problems
+        const updatedFormData = { ...formData, ...data };
+        const publicUpdatedFormData = {
+          ...updatedFormData,
+          captcha: undefined,
+        };
+
         setFormError(undefined);
-        const resp = await validateAndSendContactForm({ ...formData, ...data });
+        setFormData(publicUpdatedFormData);
+        const resp = await validateAndSendContactForm(updatedFormData);
 
         if (resp.hasErrors) {
           // There are errors, display error message

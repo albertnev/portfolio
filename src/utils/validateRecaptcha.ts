@@ -8,20 +8,31 @@ export const validateRecaptcha = async (captcha = "") => {
     response: captcha,
     secret: process.env.RECAPTCHA_SECRETKEY!,
   });
-  const recaptchaValidationResponse = await fetch(
-    `https://www.google.com/recaptcha/api/siteverify?${params}`,
-    {
-      method: "POST",
-    },
-  );
-  const recaptchaValidation =
-    (await recaptchaValidationResponse.json()) as RecaptchaResponseDto;
 
-  if (!recaptchaValidation.success) {
+  try {
+    const recaptchaValidationResponse = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?${params}`,
+      {
+        method: "POST",
+      },
+    );
+    const recaptchaValidation =
+      (await recaptchaValidationResponse.json()) as RecaptchaResponseDto;
+
+    if (!recaptchaValidation.success) {
+      return {
+        errors: {
+          captcha: "Invalid captcha response.",
+          captchaErrors: recaptchaValidation["error-codes"],
+        },
+        hasErrors: true,
+      };
+    }
+  } catch (err) {
     return {
       errors: {
-        captcha: "Invalid captcha response.",
-        captchaErrors: recaptchaValidation["error-codes"],
+        captcha: "Error while validating captcha.",
+        captchaErrors: [JSON.stringify(err)],
       },
       hasErrors: true,
     };

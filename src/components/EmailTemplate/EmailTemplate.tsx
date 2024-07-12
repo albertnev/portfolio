@@ -18,10 +18,6 @@ import { getRemoteText } from "@/utils/getRemoteText";
 
 export type EmailTemplateProps = ContactFormDto;
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "";
-
 const renderSectionTitle = (title: string) => {
   return <Heading className="text-slate-900 text-2xl mb-4">{title}</Heading>;
 };
@@ -53,7 +49,7 @@ const EmailTemplate = (data: EmailTemplateProps) => {
                   alt="An e-mail with a heart"
                   className="inline-block"
                   height="100"
-                  src={`${baseUrl}/email_heart.png`}
+                  src="cid:emailheart@jobofferemail.albertnev.com"
                   width="100"
                 />
               </div>

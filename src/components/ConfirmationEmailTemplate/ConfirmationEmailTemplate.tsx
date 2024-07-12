@@ -13,10 +13,6 @@ import {
   Text,
 } from "@react-email/components";
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "";
-
 const ConfirmationEmailTemplate = () => {
   const previewText = `Thank you for contacting me! I will contact you as soon as I can.`;
 
@@ -33,7 +29,7 @@ const ConfirmationEmailTemplate = () => {
                   alt="An e-mail with a heart"
                   className="inline-block"
                   height="100"
-                  src={`${baseUrl}/email_heart.png`}
+                  src="cid:emailheart@confirmationemail.albertnev.com"
                   width="100"
                 />
               </div>
