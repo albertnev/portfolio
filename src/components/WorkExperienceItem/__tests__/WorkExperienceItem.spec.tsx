@@ -13,7 +13,7 @@ describe("Component WorkExperienceItem", () => {
   };
 
   const openCollapsibleContent = async () => {
-    await act(() => userEvent.click(screen.getByText("More about it")));
+    await act(() => userEvent.click(screen.getByText("See more")));
   };
 
   const getDateRange = (yearStart: number, yearEnd?: number) => {
@@ -90,7 +90,7 @@ describe("Component WorkExperienceItem", () => {
       projectManagement: undefined,
     });
 
-    expect(screen.queryByText("More about it")).not.toBeInTheDocument();
+    expect(screen.queryByText("See more")).not.toBeInTheDocument();
   });
 
   it("renders the list of technologies specified", () => {

@@ -1,5 +1,5 @@
 /* eslint-disable prefer-named-capture-group -- groups won't be used in this scenario */
-export const getAmount = (amount: number | string, currency = "€") => {
+export const getAmount = (amount?: number | string, currency = "€") => {
   if (!amount) {
     return "";
   }

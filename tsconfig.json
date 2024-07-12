@@ -1,38 +1,27 @@
 {
   "extends": "@vercel/style-guide/typescript/node20",
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
     "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "types": [
-      "jest",
-      "node",
-      "@testing-library/jest-dom",
-      "vitest/globals"
-    ],
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
+    "incremental": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "types": ["jest", "node", "@testing-library/jest-dom", "vitest/globals"]
   },
   "include": [
     "next-env.d.ts",
@@ -41,7 +30,5 @@
     ".next/types/**/*.ts",
     "vitest.config.mts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

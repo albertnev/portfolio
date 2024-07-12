@@ -12,15 +12,17 @@ import { validateCompanyInformation } from "@/utils/formValidation";
 
 const CompanyInformation: React.FC<FormStepProps> = ({
   id,
+  initialFormData,
   isActive,
   onBack,
   onNext,
   onSubmit,
+  validateCaptcha,
 }) => {
   const hasSubmit = !!onSubmit;
   const { errors, isPending, validateAndSubmit } = useForm<
     z.infer<typeof companyInformationSchema>
-  >(validateCompanyInformation, hasSubmit ? onSubmit : onNext);
+  >(validateCompanyInformation, hasSubmit ? onSubmit : onNext, validateCaptcha);
 
   return (
     <Form
@@ -33,6 +35,7 @@ const CompanyInformation: React.FC<FormStepProps> = ({
       onSubmit={hasSubmit ? validateAndSubmit : undefined}
     >
       <Input
+        defaultValue={initialFormData?.company}
         errors={errors.company}
         label="Which company do you represent?"
         name="company"
@@ -40,15 +43,17 @@ const CompanyInformation: React.FC<FormStepProps> = ({
         required
       />
       <Input
+        defaultValue={initialFormData?.name}
         errors={errors.name}
-        label="What is your complete name?"
+        label="What is your full name?"
         name="name"
         placeholder="Jane Doe"
         required
       />
       <Input
+        defaultValue={initialFormData?.email}
         errors={errors.email}
-        label="Which is your contact e-mail?"
+        label="What is your contact e-mail?"
         name="email"
         placeholder="jane@companyname.com"
         required

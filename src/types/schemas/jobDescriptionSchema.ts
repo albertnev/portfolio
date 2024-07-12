@@ -1,9 +1,6 @@
 import { z } from "zod";
 
 export const jobDescriptionSchema = z.object({
-  captcha: z.string().min(1, {
-    message: "Are you a robot? Incorrect captcha validation. Please try again.",
-  }),
   extras: z.string(),
   reasons: z
     .string()

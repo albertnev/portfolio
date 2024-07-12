@@ -10,15 +10,21 @@ import { validatePositionInformation } from "@/utils/formValidation";
 
 const PositionInformation: React.FC<FormStepProps> = ({
   id,
+  initialFormData,
   isActive,
   onBack,
   onNext,
   onSubmit,
+  validateCaptcha,
 }) => {
   const hasSubmit = !!onSubmit;
   const { errors, isPending, validateAndSubmit } = useForm<
     z.infer<typeof positionInformationSchema>
-  >(validatePositionInformation, hasSubmit ? onSubmit : onNext);
+  >(
+    validatePositionInformation,
+    hasSubmit ? onSubmit : onNext,
+    validateCaptcha,
+  );
 
   return (
     <Form
@@ -31,6 +37,7 @@ const PositionInformation: React.FC<FormStepProps> = ({
       onSubmit={hasSubmit ? validateAndSubmit : undefined}
     >
       <Input
+        defaultValue={initialFormData?.job}
         errors={errors.job}
         label="Job title"
         name="job"
@@ -38,6 +45,7 @@ const PositionInformation: React.FC<FormStepProps> = ({
         required
       />
       <Input
+        defaultValue={initialFormData?.seniority}
         errors={errors.seniority}
         label="Needed seniority"
         name="seniority"
@@ -46,6 +54,7 @@ const PositionInformation: React.FC<FormStepProps> = ({
       />
       <Input
         className="no-spinner"
+        defaultValue={initialFormData?.salary}
         errors={errors.salary}
         label="Max. yearly salary (€)"
         min={55000}
@@ -57,6 +66,7 @@ const PositionInformation: React.FC<FormStepProps> = ({
       />
       <Input
         className="no-spinner"
+        defaultValue={initialFormData?.vacationDays}
         errors={errors.vacationDays}
         label="Yearly vacation days"
         min={24}

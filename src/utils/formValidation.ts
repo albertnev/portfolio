@@ -63,7 +63,7 @@ export const validateAndSendContactForm = async (
   }
 
   // Validate recaptcha information
-  const captchaValidation = await validateRecaptcha(data.captcha ?? "");
+  const captchaValidation = await validateRecaptcha(data.captcha);
   if (captchaValidation.hasErrors) {
     return {
       ...captchaValidation,

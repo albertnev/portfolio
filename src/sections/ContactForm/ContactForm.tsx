@@ -12,6 +12,7 @@ import {
   PositionInformation,
 } from "./steps";
 
+import { type ContactFormDto } from "@/types/ContactFormDto";
 import { validateAndSendContactForm } from "@/utils/formValidation";
 
 const steps = [
@@ -29,10 +30,18 @@ const steps = [
   },
 ];
 
-const ContactForm = () => {
+export interface ContactFormProps {
+  initialFormData?: Partial<ContactFormDto>;
+  initialStep?: number;
+}
+
+const ContactForm: React.FC<ContactFormProps> = ({
+  initialFormData = {},
+  initialStep = 0,
+}) => {
   const router = useRouter();
-  const [activeStep, setActiveStep] = useState(0);
-  const [formData, setFormData] = useState({});
+  const [activeStep, setActiveStep] = useState(initialStep);
+  const [formData, setFormData] = useState(initialFormData);
   const [formError, setFormError] = useState<string | undefined>();
   const [isFormSent, setIsFormSent] = useState(false);
 
@@ -62,21 +71,27 @@ const ContactForm = () => {
 
   const submitForm = useCallback(
     async (data: Record<string, string>) => {
-      // Send also last step data included to avoid syncing problems
-      setFormError(undefined);
-      const resp = await validateAndSendContactForm({ ...formData, ...data });
+      try {
+        // Send also last step data included to avoid state syncing problems
+        setFormError(undefined);
+        const resp = await validateAndSendContactForm({ ...formData, ...data });
 
-      if (resp.hasErrors) {
-        // There are errors, display error message
-        setFormError(resp.errorMessage);
-        return;
+        if (resp.hasErrors) {
+          // There are errors, display error message
+          setFormError(resp.errorMessage);
+          return;
+        }
+
+        // Everything good, data sent via e-mail: redirect to main page
+        setIsFormSent(true);
+        setTimeout(() => {
+          router.push("/");
+        }, 4000);
+      } catch (_) {
+        setFormError(
+          "Something went wrong while submitting the form. Please, try again.",
+        );
       }
-
-      // Everything good, data sent via e-mail: redirect to main page
-      setIsFormSent(true);
-      setTimeout(() => {
-        router.push("/");
-      }, 4000);
     },
     [formData, router],
   );
@@ -125,7 +140,9 @@ const ContactForm = () => {
               <StepComponent
                 key={step.key}
                 id={step.key}
+                initialFormData={formData}
                 isActive={activeStep === i}
+                validateCaptcha={i === steps.length - 1}
                 onBack={i !== 0 ? prevStep : undefined}
                 onNext={i < steps.length - 1 ? nextStep : undefined}
                 onSubmit={i === steps.length - 1 ? submitForm : undefined}

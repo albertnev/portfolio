@@ -11,29 +11,16 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
-import { type z } from "zod";
 
-import { type companyInformationSchema } from "@/types/schemas/companyInformationSchema";
-import { type jobDescriptionSchema } from "@/types/schemas/jobDescriptionSchema";
-import { type positionInformationSchema } from "@/types/schemas/positionInformationSchema";
+import { type ContactFormDto } from "@/types/ContactFormDto";
 import { getAmount } from "@/utils/getAmount";
+import { getRemoteText } from "@/utils/getRemoteText";
 
-export type EmailTemplateProps = z.infer<typeof companyInformationSchema> &
-  z.infer<typeof jobDescriptionSchema> &
-  z.infer<typeof positionInformationSchema>;
+export type EmailTemplateProps = ContactFormDto;
 
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "";
-
-const getRemoteText = (remote: string) => {
-  const texts: Record<string, string> = {
-    "1-office": "1 day office",
-    "2-office": "2 days office",
-    "full-remote": "Full remote",
-  };
-  return texts[remote] ?? "Invalid value for remote field";
-};
 
 const renderSectionTitle = (title: string) => {
   return <Heading className="text-slate-900 text-2xl mb-4">{title}</Heading>;

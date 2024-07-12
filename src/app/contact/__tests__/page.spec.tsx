@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
+import * as navigationModule from "next/navigation";
 
 import Contact from "../page";
 
@@ -24,11 +25,11 @@ describe("Contact page", () => {
       "Company",
     );
     await userEvent.type(
-      screen.getByLabelText("What is your complete name?"),
+      screen.getByLabelText("What is your full name?"),
       "Name Surname",
     );
     await userEvent.type(
-      screen.getByLabelText("Which is your contact e-mail?"),
+      screen.getByLabelText("What is your contact e-mail?"),
       "email@test.com",
     );
 
@@ -41,5 +42,12 @@ describe("Contact page", () => {
     await userEvent.click(screen.getByRole("button", { name: "Back" }));
     expect(screen.getByText("Company information")).toBeVisible();
     expect(screen.getByText("Position information")).not.toBeVisible();
+  });
+
+  it("redirects if CONTACT_FORM_ENABLED env variable is set to false", () => {
+    process.env.CONTACT_FORM_ENABLED = "false";
+    render(<Contact />);
+
+    expect(navigationModule.redirect).toHaveBeenCalledWith("/");
   });
 });

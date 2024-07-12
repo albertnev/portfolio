@@ -1,18 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 
-import { Input } from "..";
-import { type InputProps } from "../Input";
+import { Textarea } from "..";
+import { type TextareaProps } from "../Textarea";
 
-describe("FormControl Input", () => {
+describe("FormControl Textarea", () => {
   const defaultProps = {
-    label: "Test input",
+    label: "Test textarea",
     name: "test",
     placeholder: "Test",
-  } satisfies InputProps;
+  } satisfies TextareaProps;
 
-  const renderWithProps = (props?: Partial<InputProps>) => {
-    render(<Input {...defaultProps} {...props} />);
+  const renderWithProps = (props?: Partial<TextareaProps>) => {
+    render(<Textarea {...defaultProps} {...props} />);
   };
 
   it("renders the component successfully", () => {
@@ -26,29 +26,13 @@ describe("FormControl Input", () => {
     ).toBeInTheDocument();
   });
 
-  it("defaults its type to text", () => {
-    renderWithProps();
-    expect(
-      screen.getByRole("textbox", { name: defaultProps.label }),
-    ).toHaveAttribute("type", "text");
-  });
-
-  it("accepts other input types", async () => {
-    renderWithProps({ type: "email" });
-    const input = screen.getByRole("textbox", { name: defaultProps.label });
-    expect(input).toHaveAttribute("type", "email");
-
-    await userEvent.type(input, "abc");
-    expect(input).toBeInvalid();
-  });
-
   it("allows changing its value", async () => {
     renderWithProps();
 
     const text = "My text";
-    const input = screen.getByRole("textbox");
-    await userEvent.type(input, text);
-    expect(input).toHaveDisplayValue(text);
+    const textarea = screen.getByRole("textbox");
+    await userEvent.type(textarea, text);
+    expect(textarea).toHaveDisplayValue(text);
   });
 
   it("displays the first of the provided errors and shows visual feedback", () => {
@@ -62,9 +46,9 @@ describe("FormControl Input", () => {
 
   it("does not allow to change value if it is disabled", async () => {
     renderWithProps({ disabled: true });
-    const input = screen.getByRole("textbox", { name: defaultProps.label });
+    const textarea = screen.getByRole("textbox", { name: defaultProps.label });
 
-    await userEvent.type(input, "abc");
-    expect(input).toHaveValue("");
+    await userEvent.type(textarea, "abc");
+    expect(textarea).toHaveValue("");
   });
 });

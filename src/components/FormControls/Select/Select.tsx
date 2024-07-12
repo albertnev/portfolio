@@ -13,6 +13,7 @@ export interface SelectProps extends FCProps, HTMLProps<HTMLSelectElement> {
 const Select: React.FC<SelectProps> = ({
   children = null,
   className = "",
+  defaultValue,
   errors,
   label,
   placeholder = "",
@@ -30,8 +31,7 @@ const Select: React.FC<SelectProps> = ({
           "appearance-none block w-full bg-transparent text-slate-300 border rounded py-3 px-4 mb-1 leading-tight focus:backdrop-blur-sm focus:outline-none focus:bg-white/5",
           { "border-red-100": !!errors },
         )}
-        defaultValue=""
-        type="text" // default type to text
+        defaultValue={defaultValue ?? ""}
         {...rest}
       >
         {placeholder ? (

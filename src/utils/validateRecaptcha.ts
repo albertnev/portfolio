@@ -2,7 +2,7 @@
 
 import { type RecaptchaResponseDto } from "@/types/RecaptchaResponseDto";
 
-export const validateRecaptcha = async (captcha: string) => {
+export const validateRecaptcha = async (captcha = "") => {
   // Validate captcha with google servers
   const params = new URLSearchParams({
     response: captcha,
