@@ -20,7 +20,7 @@ export const sendFormEmail = async (data: Record<string, string>) => {
 
   const emailImagePath = path.join(
     process.cwd(),
-    process.env.VERCEL_URL ? "" : "public",
+    process.env.VERCEL_URL ? "static" : "public",
     "email_heart.png",
   );
 
