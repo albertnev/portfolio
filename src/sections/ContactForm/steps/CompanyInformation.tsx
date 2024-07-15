@@ -40,7 +40,6 @@ const CompanyInformation: React.FC<FormStepProps> = ({
         label="Which company do you represent?"
         name="company"
         placeholder="ACME S.L."
-        required
       />
       <Input
         defaultValue={initialFormData?.name}
@@ -48,7 +47,6 @@ const CompanyInformation: React.FC<FormStepProps> = ({
         label="What is your full name?"
         name="name"
         placeholder="Jane Doe"
-        required
       />
       <Input
         defaultValue={initialFormData?.email}
@@ -56,7 +54,6 @@ const CompanyInformation: React.FC<FormStepProps> = ({
         label="What is your contact e-mail?"
         name="email"
         placeholder="jane@companyname.com"
-        required
         type="email"
       />
     </Form>

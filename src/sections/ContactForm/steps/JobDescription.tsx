@@ -40,7 +40,6 @@ const JobDescription: React.FC<FormStepProps> = ({
         label="Remote modality"
         name="remote"
         placeholder="Choose one"
-        required
       >
         {Array.from(RemoteValues.entries()).map(([key, val]) => (
           <option key={key} value={key}>
@@ -55,7 +54,6 @@ const JobDescription: React.FC<FormStepProps> = ({
         minLength={30}
         name="tasks"
         placeholder="Everything."
-        required
       />
       <Textarea
         defaultValue={initialFormData?.reasons}
@@ -64,7 +62,6 @@ const JobDescription: React.FC<FormStepProps> = ({
         minLength={9}
         name="reasons"
         placeholder="Because we love your portfolio."
-        required
       />
       <Textarea
         defaultValue={initialFormData?.extras}

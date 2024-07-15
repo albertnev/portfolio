@@ -42,7 +42,6 @@ const PositionInformation: React.FC<FormStepProps> = ({
         label="Job title"
         name="job"
         placeholder="Frontend engineer"
-        required
       />
       <Input
         defaultValue={initialFormData?.seniority}
@@ -50,7 +49,6 @@ const PositionInformation: React.FC<FormStepProps> = ({
         label="Needed seniority"
         name="seniority"
         placeholder="Senior"
-        required
       />
       <Input
         className="no-spinner"
@@ -61,7 +59,6 @@ const PositionInformation: React.FC<FormStepProps> = ({
         name="salary"
         pattern="[0-9]*"
         placeholder="60000"
-        required
         type="number"
       />
       <Input

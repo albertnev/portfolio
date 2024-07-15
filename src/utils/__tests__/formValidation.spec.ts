@@ -98,7 +98,9 @@ describe("Util formValidation", () => {
       };
       expect(await validatePositionInformation(invalidData)).toEqual({
         errors: {
-          job: ["I need to know which is my job, unlike Chandler Bing!"],
+          job: [
+            "Unlike Chandler Bing, I'd like to be able to tell the name of my job!",
+          ],
           salary: ["Living is so expensive these days!"],
           seniority: ["This fields helps me see if I may fit!"],
           vacationDays: ["Sometimes people need a well deserved rest!"],
