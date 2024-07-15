@@ -18,8 +18,8 @@ export const sendFormEmail = async (data: Record<string, string>) => {
     service: "gmail",
   });
 
-  const emailImagePath = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}/email_heart.png`
+  const emailImagePath = process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}/email_heart.png`
     : path.join(process.cwd(), "public", "email_heart.png");
 
   const jobMailOptions: Mail.Options = {
